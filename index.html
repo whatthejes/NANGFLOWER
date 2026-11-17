@@ -306,8 +306,8 @@
         display: block;
       }
       .hero {
-        height: min(650px, 72vw);
-        min-height: 440px;
+        height: min(560px, 62vw);
+        min-height: 400px;
         position: relative;
         overflow: hidden;
         background: #cfd2d8;
@@ -396,18 +396,6 @@
         transform: translateY(-50%);
         color: white;
         max-width: 560px;
-        height: 330px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      /* Cố định vị trí nút CTA để các banner luôn thẳng hàng */
-      .hero-content .hero-desc {
-        margin-bottom: 16px;
-      }
-      .hero-content .btn-primary {
-        margin-top: auto;
-        flex-shrink: 0;
       }
       .hero-kicker {
         font-size: 12px;
@@ -1414,7 +1402,7 @@
           background: var(--tan);
         }
         .hero {
-          height: max(200px, 56.25vw);
+          height: max(230px, 68vw);
           min-height: 0;
         }
         .hero-arrow {
@@ -1472,7 +1460,7 @@
           font-size: 12px;
           line-height: 1.4;
           max-width: 100%;
-          margin-bottom: 12px;
+          margin-bottom: 10px;
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
@@ -1485,7 +1473,6 @@
         .hero-content {
           left: 13%;
           right: 13%;
-          height: 180px;
         }
         .section {
           padding: 55px 0;
@@ -1933,23 +1920,6 @@
           width: 100%;
           height: 200px;
         }
-      }
-
-      /* Ảnh phòng hiển thị dạng hình chữ nhật đồng nhất trên mọi màn hình */
-      .room-image,
-      .featured-grid .room-image {
-        width: 100%;
-        height: auto !important;
-        aspect-ratio: 16 / 10;
-        position: relative;
-        overflow: hidden;
-      }
-      .room-image img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
       }
     </style>
   </head>
