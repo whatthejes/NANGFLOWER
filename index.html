@@ -1015,11 +1015,6 @@
           font-size: 10px;
         }
       }
-      #bookingForm {
-        max-height: calc(100dvh - 40px);
-        overflow-y: auto;
-        overscroll-behavior: contain;
-      }
       .modal-backdrop {
         overflow-y: auto;
         align-items: flex-start;
@@ -1275,7 +1270,7 @@
           background: var(--pink);
         }
         .hero {
-          height: max(230px, 68vw);
+          height: max(330px, 90vw);
           min-height: 0;
         }
         .hero-arrow {
@@ -1308,21 +1303,22 @@
           gap: 7px;
         }
         .hero-kicker {
-          font-size: 9px;
-          letter-spacing: 2px;
-          margin-bottom: 5px;
+          font-size: 10px;
+          line-height: 1.5;
+          letter-spacing: 2.5px;
+          margin-bottom: 14px;
         }
         .hero-title {
-          font-size: clamp(20px, 6.6vw, 30px);
-          line-height: 1.12;
-          margin-bottom: 6px;
+          font-size: clamp(28px, 9vw, 38px);
+          line-height: 1.22;
+          margin-bottom: 14px;
         }
         .hero-title br {
-          display: none;
+          display: block;
         }
         .hero-title.script {
-          font-size: clamp(26px, 9vw, 40px);
-          line-height: 1.05;
+          font-size: clamp(40px, 13vw, 56px);
+          line-height: 1.12;
           letter-spacing: 1px;
           text-shadow:
             0 0 6px rgba(255, 255, 255, 0.4),
@@ -1330,18 +1326,18 @@
             4px 4px 8px rgba(0, 0, 0, 0.3);
         }
         .hero-desc {
-          font-size: 12px;
-          line-height: 1.4;
+          font-size: 13px;
+          line-height: 1.6;
           max-width: 100%;
-          margin-bottom: 10px;
+          margin-bottom: 20px;
           display: -webkit-box;
-          -webkit-line-clamp: 2;
+          -webkit-line-clamp: 3;
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
         .hero-content .btn-primary {
-          padding: 7px 16px;
-          font-size: 11px;
+          padding: 10px 22px;
+          font-size: 12px;
         }
         .hero-content {
           left: 13%;
@@ -1721,6 +1717,162 @@
           height: 200px;
         }
       }
+
+      /* ===== TRANG CHI TIẾT SẢN PHẨM ===== */
+      .room-card {
+        cursor: pointer;
+      }
+      .room-card:focus-visible {
+        outline: 2px solid var(--pink-dark);
+        outline-offset: 3px;
+      }
+      .product-wrap {
+        padding: 34px 0 80px;
+        background: var(--pink-soft);
+        min-height: calc(100vh - 88px);
+      }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border: 0;
+        background: transparent;
+        color: var(--pink-dark);
+        font-size: 13px;
+        font-weight: 700;
+        padding: 6px 0;
+        margin-bottom: 18px;
+      }
+      .back-link:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .product-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+        gap: 32px;
+        align-items: start;
+      }
+      .order-panel,
+      .product-side {
+        background: #fff;
+        border: 1px solid var(--pink-light);
+        border-radius: 10px;
+        box-shadow: 0 5px 22px rgba(212, 86, 122, 0.08);
+      }
+      .order-panel {
+        padding: 30px;
+      }
+      .order-panel h2 {
+        font: 800 22px "Montserrat", sans-serif;
+        color: var(--dark);
+        margin-bottom: 4px;
+      }
+      .order-panel > p {
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 20px;
+      }
+      .order-panel .btn {
+        width: 100%;
+        padding: 13px;
+      }
+      .product-side {
+        overflow: hidden;
+        order: -1;
+      }
+      .product-main-img {
+        height: 420px;
+        background: var(--pink-light);
+      }
+      .product-main-img img {
+        height: 100%;
+      }
+      .product-detail {
+        padding: 26px 30px 30px;
+      }
+      .product-detail .room-tag {
+        position: static;
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+      .product-detail h1 {
+        font: 800 26px/1.25 "Montserrat", sans-serif;
+        color: var(--dark);
+        margin-bottom: 8px;
+      }
+      .product-price {
+        font: 800 22px "Montserrat", sans-serif;
+        color: var(--pink-dark);
+        margin-bottom: 14px;
+      }
+      .product-desc {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
+      .product-specs {
+        list-style: none;
+        border-top: 1px solid var(--pink-light);
+      }
+      .product-specs li {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 11px 0;
+        border-bottom: 1px solid var(--pink-light);
+        font-size: 13px;
+      }
+      .product-specs li span:first-child {
+        color: var(--muted);
+        flex-shrink: 0;
+      }
+      .product-specs li span:last-child {
+        font-weight: 600;
+        text-align: right;
+      }
+      @media (max-width: 900px) {
+        .product-layout {
+          grid-template-columns: 1fr;
+        }
+        .product-side {
+          order: -1;
+        }
+        .product-main-img {
+          height: 300px;
+        }
+      }
+      @media (max-width: 600px) {
+        .order-panel {
+          padding: 22px 18px;
+        }
+        .product-detail {
+          padding: 20px 18px 24px;
+        }
+        .product-detail h1 {
+          font-size: 22px;
+        }
+      }
+      /* ===== CHẤM ĐỎ THÔNG BÁO ĐƠN MỚI ===== */
+      .red-dot {
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        margin-left: 6px;
+        border-radius: 50%;
+        background: #e53935;
+        vertical-align: middle;
+        box-shadow: 0 0 0 2px #fff;
+      }
+      .menu-toggle {
+        position: relative;
+      }
+      .menu-toggle .red-dot {
+        position: absolute;
+        top: 5px;
+        right: 4px;
+        margin: 0;
+      }
     </style>
   </head>
   <body>
@@ -1753,7 +1905,7 @@
             <a class="nav-link" href="#" data-page="services">Sản phẩm</a>
             <a class="nav-link" href="#" data-page="about">Giới thiệu</a>
             <a class="nav-link" href="#" data-page="contact">Liên hệ</a>
-            <a class="nav-link" href="#" data-page="mybookings">Đơn của tôi</a>
+            <a class="nav-link" href="#" data-page="mybookings">Đơn của tôi<span class="red-dot hidden" id="navOrderDot"></span></a>
           </nav>
           <button
             class="search-toggle"
@@ -1766,7 +1918,7 @@
             </svg>
           </button>
           <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">
-            ☰
+            ☰<span class="red-dot hidden" id="menuOrderDot"></span>
           </button>
         </div>
         <div class="search-panel hidden" id="searchPanel">
@@ -2245,6 +2397,95 @@
           </div>
         </section>
       </section>
+
+      <!-- TRANG CHI TIẾT SẢN PHẨM + ĐẶT HÀNG -->
+      <section class="page" id="productPage">
+        <div class="product-wrap">
+          <div class="container">
+            <button type="button" class="back-link" id="productBack">
+              ← Quay lại
+            </button>
+            <div class="product-layout">
+              <!-- Bên trái: thông tin đặt hàng -->
+              <form class="order-panel" id="bookingForm">
+                <h2>Thông tin đặt hàng</h2>
+                <p>Gửi thông tin để NẮNG FLOWER liên hệ tư vấn cho bạn.</p>
+                <div class="form-group">
+                  <label for="bookingRoom">Loại hoa</label>
+                  <input id="bookingRoom" name="room" readonly />
+                </div>
+                <div class="form-group">
+                  <label for="guestName">Họ và tên</label>
+                  <input
+                    id="guestName"
+                    name="name"
+                    required
+                    placeholder="Nhập họ tên của bạn"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="guestPhone">Số điện thoại</label>
+                  <input
+                    id="guestPhone"
+                    name="phone"
+                    required
+                    type="tel"
+                    placeholder="Nhập số điện thoại"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="guestAddress">Địa chỉ giao hoa</label>
+                  <input
+                    id="guestAddress"
+                    name="address"
+                    required
+                    placeholder="Nhập địa chỉ nhận hoa"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="checkout">Ngày giao hoa</label>
+                  <input id="checkout" name="checkout" type="date" required />
+                </div>
+                <div class="form-group">
+                  <label for="guestNote">Ghi chú</label>
+                  <textarea
+                    id="guestNote"
+                    name="note"
+                    placeholder="Số lượng hoa hoặc yêu cầu khác..."
+                  ></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">
+                  Gửi yêu cầu đặt hoa
+                </button>
+              </form>
+
+              <!-- Bên phải: ảnh và chi tiết sản phẩm -->
+              <div class="product-side">
+                <div class="product-main-img">
+                  <img id="productImage" src="" alt="" />
+                </div>
+                <div class="product-detail">
+                  <span class="room-tag">Còn hoa</span>
+                  <h1 id="productName"></h1>
+                  <div class="product-price" id="productPrice"></div>
+                  <p class="product-desc" id="productDesc"></p>
+                  <ul class="product-specs">
+                    <li><span>Danh mục</span><span id="productCat"></span></li>
+                    <li><span>Tình trạng</span><span>Còn hoa</span></li>
+                    <li>
+                      <span>Giao hàng</span
+                      ><span>Nội thành Đà Lạt, trong ngày</span>
+                    </li>
+                    <li>
+                      <span>Giờ mở cửa</span><span>7:00 – 21:00 hằng ngày</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -2342,74 +2583,6 @@
       </div>
     </footer>
 
-    <div class="modal-backdrop" id="bookingBackdrop">
-      <form class="booking-modal" id="bookingForm">
-        <button
-          type="button"
-          class="modal-close"
-          id="closeBooking"
-          aria-label="Đóng"
-        >
-          ×
-        </button>
-        <h2>Đặt hoa</h2>
-        <p>Gửi thông tin để NẮNG FLOWER liên hệ tư vấn cho bạn.</p>
-        <div class="booking-preview" id="bookingPreview">
-          <img id="bookingImage" src="" alt="Ảnh hoa được chọn" />
-          <div class="booking-preview-info">
-            <strong id="bookingPreviewName">Loại hoa</strong>
-            <span id="bookingPreviewPrice">Giá</span>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="bookingRoom">Loại hoa</label>
-          <input id="bookingRoom" name="room" readonly />
-        </div>
-        <div class="form-group">
-          <label for="guestName">Họ và tên</label>
-          <input
-            id="guestName"
-            name="name"
-            required
-            placeholder="Nhập họ tên của bạn"
-          />
-        </div>
-        <div class="form-group">
-          <label for="guestPhone">Số điện thoại</label>
-          <input
-            id="guestPhone"
-            name="phone"
-            required
-            type="tel"
-            placeholder="Nhập số điện thoại"
-          />
-        </div>
-        <div class="form-group">
-          <label for="guestAddress">Địa chỉ giao hoa</label>
-          <input
-            id="guestAddress"
-            name="address"
-            required
-            placeholder="Nhập địa chỉ nhận hoa"
-          />
-        </div>
-        <div class="form-group">
-          <label for="checkout">Ngày giao hoa</label>
-          <input id="checkout" name="checkout" type="date" required />
-        </div>
-        <div class="form-group">
-          <label for="guestNote">Ghi chú</label>
-          <textarea
-            id="guestNote"
-            name="note"
-            placeholder="Số lượng hoa hoặc yêu cầu khác..."
-          ></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">
-          Gửi yêu cầu đặt hoa
-        </button>
-      </form>
-    </div>
 
     <button
       class="chat-fab"
@@ -2917,7 +3090,7 @@
       function roomCard(room, catName) {
         const [name, desc, price, img] = room;
         return `
-          <article class="room-card">
+          <article class="room-card" role="button" tabindex="0" onclick="openProduct('${esc(name)}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProduct('${esc(name)}')}">
             <div class="room-image">
               <img src="${esc(img)}" alt="${esc(name)}" loading="lazy" />
               <span class="room-tag">Còn hoa</span>
@@ -2930,7 +3103,7 @@
                 <span class="room-price">${esc(price)}</span>
               </div>
               <div class="room-actions">
-                <button class="btn btn-primary" onclick="openBooking('${esc(name)}')">Đặt hoa</button>
+                <button class="btn btn-primary" type="button">Đặt hoa</button>
               </div>
             </div>
           </article>`;
@@ -3024,9 +3197,23 @@
         about: "aboutPage",
         contact: "contactPage",
         mybookings: "mybookingsPage",
+        product: "productPage",
       };
+      let currentPage = "home";
+
+      function setOrderDot(show) {
+        try {
+          if (show) localStorage.setItem("ordersUnseen", "1");
+          else localStorage.removeItem("ordersUnseen");
+        } catch (e) {}
+        ["navOrderDot", "menuOrderDot"].forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) el.classList.toggle("hidden", !show);
+        });
+      }
 
       function showPage(name) {
+        currentPage = name;
         document
           .querySelectorAll(".page")
           .forEach((p) => p.classList.remove("active"));
@@ -3038,7 +3225,10 @@
         document.getElementById("mainNav").classList.remove("open");
         moveIndicator();
         window.scrollTo({ top: 0, behavior: "smooth" });
-        if (name === "mybookings") renderMyBookings();
+        if (name === "mybookings") {
+          renderMyBookings();
+          setOrderDot(false);
+        }
         if (name === "home") {
           startHeroVideos();
         } else {
@@ -3167,8 +3357,9 @@
         document.getElementById("mainNav").classList.toggle("open");
       });
 
-      const bookingBackdrop = document.getElementById("bookingBackdrop");
       const bookingForm = document.getElementById("bookingForm");
+      let productPrevPage = "home";
+      let productPrevScroll = 0;
 
       function findProduct(name) {
         for (const cat of categories) {
@@ -3178,24 +3369,45 @@
         return null;
       }
 
-      function openBooking(roomName) {
-        const product = findProduct(roomName);
-        document.getElementById("bookingRoom").value = roomName;
-        document.getElementById("bookingPreviewName").textContent = roomName;
-        document.getElementById("bookingImage").src = product ? product[3] : "";
-        document.getElementById("bookingImage").alt = "Ảnh " + roomName;
-        document.getElementById("bookingPreviewPrice").textContent = product
-          ? product[2]
-          : "";
-        bookingBackdrop.classList.add("show");
+      function findCategoryName(name) {
+        const cat = categories.find((c) => c.rooms.some((r) => r[0] === name));
+        return cat ? cat.name : "";
       }
 
-      document.getElementById("closeBooking").addEventListener("click", () => {
-        bookingBackdrop.classList.remove("show");
-      });
-      bookingBackdrop.addEventListener("click", (e) => {
-        if (e.target === bookingBackdrop)
-          bookingBackdrop.classList.remove("show");
+      function openProduct(roomName) {
+        const product = findProduct(roomName);
+        if (!product) return;
+        if (currentPage !== "product") {
+          productPrevPage = currentPage;
+          productPrevScroll = window.scrollY;
+        }
+        const [name, desc, price, img] = product;
+        document.getElementById("bookingRoom").value = name;
+        document.getElementById("productName").textContent = name;
+        document.getElementById("productPrice").textContent = price;
+        document.getElementById("productDesc").textContent = desc;
+        document.getElementById("productCat").textContent =
+          findCategoryName(name);
+        const imgEl = document.getElementById("productImage");
+        imgEl.src = img;
+        imgEl.alt = "Ảnh " + name;
+        const dateEl = document.getElementById("checkout");
+        const d = new Date();
+        dateEl.min =
+          d.getFullYear() +
+          "-" +
+          String(d.getMonth() + 1).padStart(2, "0") +
+          "-" +
+          String(d.getDate()).padStart(2, "0");
+        bookingForm.reset();
+        document.getElementById("bookingRoom").value = name;
+        showPage("product");
+      }
+
+      document.getElementById("productBack").addEventListener("click", () => {
+        const y = productPrevScroll;
+        showPage(productPrevPage);
+        setTimeout(() => window.scrollTo({ top: y, behavior: "instant" }), 30);
       });
 
       bookingForm.addEventListener("submit", (e) => {
@@ -3218,9 +3430,12 @@
         list.push(data);
         localStorage.setItem("myBookings", JSON.stringify(list));
         bookingForm.reset();
-        bookingBackdrop.classList.remove("show");
         showToast("Đặt hoa thành công! Chúng tôi sẽ liên hệ với bạn.");
         renderMyBookings();
+        const y = productPrevScroll;
+        showPage(productPrevPage);
+        setTimeout(() => window.scrollTo({ top: y, behavior: "instant" }), 30);
+        setOrderDot(true);
       });
 
       let selectedNeed = "";
@@ -3268,6 +3483,7 @@
               "Đã gửi yêu cầu đặt hoa theo yêu cầu! Shop sẽ liên hệ với bạn.",
             );
             renderMyBookings();
+            setOrderDot(true);
           });
         });
       }
@@ -3409,6 +3625,39 @@ ${b.image ? `<img class="my-booking-image" src="${esc(b.image)}" alt="Ảnh ${es
         setTimeout(() => addMsg(botReply(text), "bot"), 600);
       });
 
+      /* Bấm ra ngoài hoặc nhấn Esc để đóng ô tìm kiếm / chatbox */
+      function closeSearchPanel() {
+        searchPanel.classList.add("hidden");
+      }
+      function closeChatBox() {
+        chatBox.classList.remove("show");
+        chatFab.classList.remove("open");
+        chatFab.setAttribute("aria-expanded", "false");
+      }
+      document.addEventListener("click", (e) => {
+        const path = e.composedPath();
+        const searchOpen = !searchPanel.classList.contains("hidden");
+        if (
+          searchOpen &&
+          !path.includes(searchPanel) &&
+          !path.includes(document.getElementById("searchToggle"))
+        ) {
+          closeSearchPanel();
+        }
+        if (
+          chatBox.classList.contains("show") &&
+          !path.includes(chatBox) &&
+          !path.includes(chatFab)
+        ) {
+          closeChatBox();
+        }
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key !== "Escape") return;
+        closeSearchPanel();
+        closeChatBox();
+      });
+
       /* ============ KHỞI TẠO ============ */
       renderFeatured();
       renderCategories();
@@ -3417,6 +3666,9 @@ ${b.image ? `<img class="my-booking-image" src="${esc(b.image)}" alt="Ảnh ${es
       bindCustomForm();
       moveIndicator();
       renderMyBookings();
+      try {
+        setOrderDot(localStorage.getItem("ordersUnseen") === "1");
+      } catch (e) {}
       startHeroVideos();
     </script>
   </body>
