@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10 HARD HOME</title>
-    <link rel="icon" type="image/png" href="images/logo_512x512_edge.png" />
+    <title>NẮNG FLOWER</title>
+    <!-- Logo chỉ dùng cho thanh tab trình duyệt (favicon) -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="c:\Users\Admin\Documents\webck\images\Designer.png"
+    />
     <meta
       name="description"
-      content="10HARDHOME - Homestay Đà Lạt, nơi nghỉ dưỡng ấm áp và đồng hành cùng bạn khám phá thành phố ngàn hoa."
+      content="NẮNG FLOWER - Cửa hàng hoa tươi Đà Lạt, mang vẻ đẹp và hương thơm đến mọi khoảnh khắc."
     />
-    <title>10HARDHOME | Homestay Đà Lạt</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,44 +22,49 @@
     />
     <style>
       .btn-cancel {
-        background: var(--red);
+        background: var(--pink-dark);
         color: #fff;
-        border: 1px solid var(--red);
+        border: 1px solid var(--pink-dark);
       }
-
       .btn-cancel:hover {
-        background: #92251f;
-        border-color: #92251f;
+        background: #b03a5b;
+        border-color: #b03a5b;
       }
+      /* Tên NẮNG FLOWER: chữ cách nhau 1 khoảng nhỏ, không dùng ảnh logo */
       .logo-brand {
-        display: flex;
-        align-items: flex-end; /* căn đáy */
-        gap: 2px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
         line-height: 1;
       }
-
-      .brand-logo {
-        height: 1.45em;
-        width: auto;
-        display: block;
-        margin-right: -2px;
-        object-fit: contain;
-        flex-shrink: 0;
+      .brand-word {
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+      }
+      .brand-nang {
+        color: #2d2228;
+      }
+      .brand-flower {
+        color: var(--pink-dark);
+        margin-left: 4px;
       }
       :root {
-        --white: #fbfbfc;
-        --cream: #eceef1;
-        --tan: #d9bfa4;
-        --brown: #4a4e57;
-        --dark: #252830;
-        --red: #b8322b;
-        --ink: #1f2024;
-        --muted: #555b65;
-        --bg-featured: #fbfbfc;
-        --bg-rooms: #ddd5c6;
-        --bg-guide: #fbfbfc;
-        --bg-explore: #ddd5c6;
-        --shadow: 0 12px 35px rgba(30, 32, 38, 0.1);
+        --white: #ffffff;
+        --cream: #fff5f7;
+        --tan: #f8c8d4;
+        --brown: #8a5a6b;
+        --dark: #2d2228;
+        --red: #e07a96;
+        --pink: #f8c8d4;
+        --pink-light: #fde8ee;
+        --pink-dark: #d4567a;
+        --pink-soft: #fff0f4;
+        --green: #218838;
+        --ink: #2d2228;
+        --muted: #8a7078;
+        --bg-featured: #ffffff;
+        --bg-rooms: #fff0f4;
+        --shadow: 0 12px 35px rgba(212, 86, 122, 0.12);
         --radius: 8px;
       }
       * {
@@ -98,12 +107,12 @@
       }
       .site-header {
         height: 88px;
-        background: rgba(251, 251, 252, 0.96);
+        background: rgba(255, 255, 255, 0.97);
         backdrop-filter: blur(12px);
         position: sticky;
         top: 0;
         z-index: 1000;
-        border-bottom: 1px solid rgba(60, 64, 72, 0.12);
+        border-bottom: 1px solid rgba(212, 86, 122, 0.15);
       }
       .header-inner {
         height: 100%;
@@ -122,23 +131,14 @@
         font-family: "Montserrat", sans-serif;
         font-size: 27px;
         font-weight: 800;
-        letter-spacing: -1.5px;
+        letter-spacing: 0.3px;
         white-space: nowrap;
-      }
-      .brand-ten {
-        color: var(--red);
-      }
-      .brand-harh {
-        color: #2f3a4a;
-      }
-      .brand-home {
-        color: #c9aa8b;
       }
       .brand-slogan {
         font-size: 13px;
         letter-spacing: 0.6px;
         font-weight: 600;
-        color: #2f3a4a;
+        color: #2d2228;
         margin-top: 6px;
         align-self: flex-end;
         text-align: right;
@@ -160,7 +160,7 @@
         top: 0;
         left: 0;
         height: 100%;
-        background: var(--tan);
+        background: var(--pink);
         border-radius: 5px;
         z-index: 0;
         pointer-events: none;
@@ -180,7 +180,7 @@
         border-radius: 5px;
         font-size: 13px;
         font-weight: 700;
-        color: #171311;
+        color: #2d2228;
         transition:
           color 0.25s,
           transform 0.25s;
@@ -188,47 +188,8 @@
       .nav-link:hover {
         transform: translateY(-3px);
       }
-      /* Chấm đỏ báo có đặt phòng mới ở mục "Phòng của tôi" */
-      .nav-link.has-dot::after {
-        content: "";
-        position: absolute;
-        top: 3px;
-        right: 3px;
-        width: 9px;
-        height: 9px;
-        border-radius: 50%;
-        background: #e53935;
-        box-shadow: 0 0 0 2px var(--white);
-      }
-      .menu-toggle {
-        position: relative;
-      }
-      .menu-toggle.has-dot::after {
-        content: "";
-        position: absolute;
-        top: 4px;
-        right: 4px;
-        width: 9px;
-        height: 9px;
-        border-radius: 50%;
-        background: #e53935;
-        box-shadow: 0 0 0 2px var(--white);
-      }
-      .footer-col p.fc-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-      }
-      .footer-col .fc-icon {
-        flex-shrink: 0;
-        width: 18px;
-        text-align: center;
-        color: #ffffff;
-        font-size: 16px;
-        line-height: 1.3;
-      }
       .nav-link.active {
-        color: #171311;
+        color: #2d2228;
       }
       .search-toggle,
       .menu-toggle {
@@ -243,7 +204,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #171311;
+        color: #2d2228;
       }
       .search-toggle svg {
         width: 26px;
@@ -266,7 +227,7 @@
         padding: 18px;
         border-radius: 8px;
         box-shadow: var(--shadow);
-        border: 1px solid #e1e3e8;
+        border: 1px solid var(--pink);
       }
       .search-row {
         display: flex;
@@ -275,13 +236,13 @@
       .search-row input {
         width: 100%;
         padding: 12px;
-        border: 1px solid #d3d6dc;
+        border: 1px solid var(--pink);
         border-radius: 5px;
         outline: none;
         font: inherit;
       }
       .search-row input:focus {
-        border-color: var(--brown);
+        border-color: var(--pink-dark);
       }
       .search-results {
         padding-top: 10px;
@@ -293,10 +254,10 @@
       .search-result {
         display: block;
         padding: 9px 4px;
-        border-bottom: 1px solid #e8eaee;
+        border-bottom: 1px solid var(--pink-light);
       }
       .search-result:hover {
-        color: var(--red);
+        color: var(--pink-dark);
       }
       .page {
         display: none;
@@ -310,49 +271,8 @@
         min-height: 400px;
         position: relative;
         overflow: hidden;
-        background: #cfd2d8;
+        background: var(--pink-light);
       }
-      .hero-layer[data-slide="0"] {
-        overflow: hidden;
-      }
-
-      .hero-layer[data-slide="0"]::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: 4;
-        pointer-events: none;
-
-        background-image:
-          radial-gradient(
-            circle,
-            rgba(255, 255, 255, 0.95) 2px,
-            transparent 2px
-          ),
-          radial-gradient(
-            circle,
-            rgba(255, 255, 255, 0.75) 1.5px,
-            transparent 1.5px
-          ),
-          radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, transparent 1px);
-
-        background-size:
-          250px 250px,
-          180px 180px,
-          120px 120px;
-
-        animation: snowFall 18s linear infinite;
-      }
-
-      @keyframes snowFall {
-        from {
-          transform: translateY(-50px);
-        }
-        to {
-          transform: translateY(100%);
-        }
-      }
-
       .hero-layer {
         position: absolute;
         inset: 0;
@@ -367,15 +287,20 @@
         content: "";
         position: absolute;
         inset: 0;
+        z-index: 2;
         background: linear-gradient(
           90deg,
-          rgba(18, 19, 22, 0.52),
-          rgba(18, 19, 22, 0.08) 75%
+          rgba(45, 34, 40, 0.55),
+          rgba(45, 34, 40, 0.08) 75%
         );
       }
-      .hero-layer img {
+      .hero-layer img,
+      .hero-layer video {
         height: 100%;
-        filter: saturate(0.85);
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+        filter: saturate(0.9);
       }
       .hero-layer.active {
         opacity: 1;
@@ -388,9 +313,41 @@
         transform: translateX(-15%);
         z-index: 1;
       }
+      /* ===== BANNER 1: VIDEO CỐ ĐỊNH VỊ TRÍ, HÒA MỜ ÊM KHÔNG RUNG LẮC ===== */
+      .hero-video-stage {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        overflow: hidden;
+        background: #2d2228;
+        contain: strict;
+      }
+      .hero-video-item {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        opacity: 0;
+        filter: saturate(0.95) brightness(0.92);
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        will-change: opacity;
+        transition: opacity 0.85s cubic-bezier(0.25, 0.1, 0.25, 1);
+        pointer-events: none;
+      }
+      .hero-video-item.is-active {
+        opacity: 1;
+        z-index: 2;
+      }
+      .hero-video-item.is-prev {
+        opacity: 1;
+        z-index: 1;
+      }
       .hero-content {
         position: absolute;
-        z-index: 3;
+        z-index: 5;
         left: max(6%, calc((100% - 1180px) / 2));
         top: 50%;
         transform: translateY(-50%);
@@ -410,18 +367,18 @@
         font-weight: 800;
         margin-bottom: 18px;
       }
-      .christmas {
+      .hero-title.script {
         font-family: Georgia, serif;
         font-style: italic;
         letter-spacing: 2px;
-        font-size: clamp(60px, 8vw, 110px);
+        font-size: clamp(50px, 7vw, 95px);
         line-height: 0.95;
         color: #ffffff;
         text-shadow:
           0 0 8px rgba(255, 255, 255, 0.4),
           0 0 20px rgba(255, 255, 255, 0.35),
-          4px 4px 0 #b8322b,
-          8px 8px 15px rgba(0, 0, 0, 0.35);
+          3px 3px 0 var(--pink-dark),
+          8px 8px 15px rgba(0, 0, 0, 0.3);
       }
       .hero-desc {
         font-size: 16px;
@@ -441,27 +398,25 @@
         transition: 0.25s;
       }
       .btn-primary {
-        background: var(--red);
+        background: var(--pink-dark);
         color: white;
       }
       .btn-primary:hover {
-        background: #92251f;
+        background: #b03a5b;
         transform: translateY(-2px);
       }
-      /* Nút đỏ trong banner: hiệu ứng bật lên với viền trắng bên trái và phía dưới */
       .hero-content .btn-primary {
         position: relative;
-        background: var(--red);
+        background: var(--pink-dark);
         color: #fff;
-        border: 1px solid var(--red);
+        border: 1px solid var(--pink-dark);
         transition:
           transform 0.22s ease,
           box-shadow 0.22s ease;
       }
-
       .hero-content .btn-primary:hover,
       .hero-content .btn-primary:focus-visible {
-        background: var(--red);
+        background: var(--pink-dark);
         color: #fff;
         transform: translate(3px, -3px);
         box-shadow: -4px 4px 0 #fff;
@@ -471,21 +426,20 @@
         box-shadow: -2px 2px 0 #fff;
         transition-duration: 0.1s;
       }
-
       .btn-outline {
-        border-color: var(--brown);
+        border-color: var(--pink-dark);
         color: var(--dark);
         background: transparent;
       }
       .btn-outline:hover {
-        background: var(--brown);
+        background: var(--pink-dark);
         color: white;
       }
       .hero-arrow {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 6;
+        z-index: 12;
         width: 48px;
         height: 64px;
         border: 0;
@@ -521,7 +475,7 @@
       }
       .hero-dots {
         position: absolute;
-        z-index: 5;
+        z-index: 13;
         bottom: 24px;
         left: 50%;
         transform: translateX(-50%);
@@ -544,19 +498,34 @@
         padding: 76px 0;
       }
       .section.soft {
-        background: var(--cream);
+        background: var(--pink-soft);
       }
       .section.sec-featured {
-        background: var(--bg-featured);
+        background: var(--white);
       }
       .section.sec-rooms {
-        background: var(--bg-rooms);
+        background: var(--pink-light);
       }
-      .section.sec-guide {
-        background: var(--bg-guide);
+      .section.customer-reviews {
+        background: var(--white);
       }
-      .section.sec-explore {
-        background: var(--bg-explore);
+      .section.sec-custom {
+        position: relative;
+        background-image: url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1900&q=85");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .section.sec-custom::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 240, 244, 0.88);
+        z-index: 0;
+      }
+      .section.sec-custom > .container {
+        position: relative;
+        z-index: 1;
       }
       .section-heading {
         text-align: center;
@@ -566,7 +535,7 @@
         font-size: 11px;
         letter-spacing: 3px;
         text-transform: uppercase;
-        color: var(--red);
+        color: var(--pink-dark);
         font-weight: 700;
       }
       .section-title {
@@ -594,9 +563,9 @@
         background: white;
         border-radius: 7px;
         overflow: hidden;
-        box-shadow: 0 5px 22px rgba(30, 32, 38, 0.07);
+        box-shadow: 0 5px 22px rgba(212, 86, 122, 0.08);
         transition: 0.28s;
-        border: 1px solid rgba(60, 64, 72, 0.08);
+        border: 1px solid var(--pink-light);
       }
       .room-card:hover {
         transform: translateY(-6px);
@@ -606,7 +575,7 @@
         height: 190px;
         position: relative;
         overflow: hidden;
-        background: #e3e5e9;
+        background: var(--pink-light);
       }
       .room-image img {
         height: 100%;
@@ -620,18 +589,12 @@
         top: 12px;
         left: 12px;
         background: #fff !important;
-        background-color: #fff !important;
-        opacity: 1 !important;
-        color: #218838;
-        border: 1px solid #218838;
+        color: var(--green);
+        border: 1px solid var(--green);
         padding: 5px 9px;
         border-radius: 3px;
-        font-size: 13px;
+        font-size: 11px;
         font-weight: 700;
-      }
-      .room-tag.sold-out {
-        color: var(--red);
-        border-color: var(--red);
       }
       .room-info {
         padding: 17px;
@@ -661,7 +624,7 @@
       }
       .room-price {
         font-weight: 800;
-        color: var(--red);
+        color: var(--pink-dark);
         font-size: 13px;
       }
       .room-actions {
@@ -695,10 +658,15 @@
         color: var(--muted);
         margin-top: 4px;
       }
+      .category-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 22px;
+      }
       .view-more {
-        border: 1px solid var(--brown);
+        border: 1px solid var(--pink-dark);
         background: transparent;
-        color: #171311;
+        color: var(--pink-dark);
         padding: 9px 16px;
         border-radius: 4px;
         font-size: 12px;
@@ -707,182 +675,17 @@
         transition: 0.2s;
       }
       .view-more:hover {
-        background: var(--brown);
+        background: var(--pink-dark);
         color: white;
-      }
-      .category-actions {
-        display: flex;
-        justify-content: center;
-        margin-top: 22px;
-      }
-      .chev {
-        display: inline-block;
-        width: 7px;
-        height: 7px;
-        border-top: 2px solid currentColor;
-        border-right: 2px solid currentColor;
-        transform: rotate(45deg);
-        margin-left: 8px;
-        margin-right: 2px;
-        vertical-align: middle;
-        position: relative;
-        top: -1px;
-      }
-      .chev.left {
-        transform: rotate(-135deg);
-        margin-left: 3px;
-        margin-right: 9px;
-        top: 0;
-      }
-      .chev.up {
-        transform: rotate(-45deg);
-        top: 2px;
-      }
-      .chev.down {
-        transform: rotate(135deg);
-        top: -3px;
       }
       .category-block .room-grid .room-card:nth-child(n + 5) {
         display: none;
       }
       .category-block.expanded .room-grid .room-card:nth-child(n + 5) {
-        display: block;
+        display: flex;
       }
       .featured-grid .room-image {
         height: 210px;
-      }
-      .split-banner {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        min-height: 340px;
-        background: var(--dark);
-        color: white;
-      }
-      .split-banner img {
-        height: 100%;
-        min-height: 340px;
-      }
-      .split-content {
-        padding: 55px;
-        align-self: center;
-      }
-      .split-content h2 {
-        font:
-          800 30px "Montserrat",
-          sans-serif;
-        margin: 10px 0 14px;
-      }
-      .split-content p {
-        font-size: 14px;
-        color: #dfe1e6;
-        margin-bottom: 22px;
-      }
-      .article-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-      }
-      .article-card {
-        background: white;
-        border-radius: 7px;
-        overflow: hidden;
-        box-shadow: 0 5px 20px rgba(30, 32, 38, 0.07);
-      }
-      .article-card img {
-        height: 220px;
-      }
-      .article-body {
-        padding: 20px;
-        text-align: center;
-      }
-      .article-body h3 {
-        font:
-          700 16px "Montserrat",
-          sans-serif;
-        color: var(--dark);
-        margin-bottom: 9px;
-      }
-      .article-body p {
-        font-size: 12px;
-        color: var(--muted);
-        margin-bottom: 14px;
-      }
-      .text-link {
-        background: none;
-        border: 0;
-        padding: 0;
-        cursor: pointer;
-        font-size: 12px;
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        color: #171311;
-        font-weight: 700;
-      }
-      .explore-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-      }
-      .explore-card {
-        background: white;
-        border-radius: 7px;
-        overflow: hidden;
-        box-shadow: 0 5px 20px rgba(30, 32, 38, 0.07);
-      }
-      .explore-card img {
-        height: 205px;
-      }
-      .explore-body {
-        padding: 17px;
-      }
-      .explore-body h3 {
-        font:
-          700 15px "Montserrat",
-          sans-serif;
-        color: var(--dark);
-        margin-bottom: 7px;
-      }
-      .explore-body p {
-        font-size: 12px;
-        color: var(--muted);
-        margin-bottom: 14px;
-      }
-      .explore-more {
-        background: var(--tan);
-        border: 0;
-        padding: 7px 12px;
-        border-radius: 3px;
-        font-size: 11px;
-        font-weight: 700;
-        color: #211b18;
-      }
-      /* Nút "Xem thêm" ở Cẩm nang vi vu và Khám phá Đà Lạt luôn nằm cùng một hàng ngang */
-      .article-card,
-      .explore-card {
-        display: flex;
-        flex-direction: column;
-      }
-      .article-card img,
-      .explore-card img {
-        flex-shrink: 0;
-      }
-      .article-body,
-      .explore-body {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-      }
-      .article-body .text-link {
-        margin-top: auto;
-        align-self: center;
-      }
-      .explore-body .explore-more {
-        margin-top: auto;
-        align-self: flex-start;
-      }
-      .explore-more:hover {
-        background: var(--brown);
-        color: white;
       }
       .page-banner {
         height: 340px;
@@ -892,7 +695,7 @@
         justify-content: center;
         text-align: center;
         color: white;
-        background: #6f737c;
+        background: var(--pink-dark);
       }
       .page-banner img {
         position: absolute;
@@ -903,7 +706,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(22, 23, 27, 0.48);
+        background: rgba(45, 34, 40, 0.5);
       }
       .page-banner-content {
         position: relative;
@@ -919,44 +722,58 @@
         font-size: 14px;
         margin-top: 10px;
       }
-      .about-content {
+      .about-story {
+        display: flex;
+        flex-direction: column;
+        gap: 130px;
+      }
+      .about-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 45px;
         align-items: center;
       }
-      .about-content img {
-        height: 390px;
-        border-radius: 7px;
+      .about-row.reverse .about-row-img {
+        order: 2;
       }
-      .about-copy h2 {
+      .about-row.reverse .about-row-text {
+        order: 1;
+      }
+      .about-row-img img {
+        height: 360px;
+        border-radius: 8px;
+        width: 100%;
+        object-fit: cover;
+      }
+      .about-row-text h2 {
         font:
-          800 29px "Montserrat",
+          800 26px "Montserrat",
           sans-serif;
         color: var(--dark);
         margin: 8px 0 15px;
       }
-      .about-copy p {
+      .about-row-text p {
         font-size: 14px;
         color: var(--muted);
         margin-bottom: 13px;
+        line-height: 1.8;
       }
       .value-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
-        margin-top: 35px;
+        margin-top: 90px;
       }
       .value-card {
         padding: 25px;
         background: white;
-        border: 1px solid #e1e3e8;
+        border: 1px solid var(--pink);
         text-align: center;
         border-radius: 6px;
       }
       .value-card .value-icon {
         font-size: 27px;
-        color: var(--red);
+        color: var(--pink-dark);
       }
       .value-card h3 {
         font:
@@ -979,10 +796,10 @@
         border: 0;
         width: 100%;
         border-radius: 7px;
-        background: #e3e5e9;
+        background: var(--pink-light);
       }
       .contact-card {
-        background: var(--cream);
+        background: var(--pink-soft);
         padding: 30px;
         border-radius: 7px;
       }
@@ -997,10 +814,10 @@
         display: flex;
         gap: 14px;
         padding: 15px 0;
-        border-bottom: 1px solid #d8dbe0;
+        border-bottom: 1px solid var(--pink);
       }
       .contact-icon {
-        color: var(--red);
+        color: var(--pink-dark);
         font-size: 20px;
       }
       .contact-item strong {
@@ -1014,66 +831,86 @@
         color: var(--muted);
         overflow-wrap: anywhere;
       }
-      .article-detail {
-        max-width: 850px;
-        margin: auto;
+      .custom-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-bottom: 28px;
       }
-      .article-detail .article-text {
-        font-size: 16px;
-        line-height: 1.9;
-        color: #3d4047;
-        margin: 0 0 18px;
+      .custom-card {
+        background: white;
+        border: 1px solid var(--pink);
+        border-radius: 8px;
+        padding: 22px 18px;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.25s;
       }
-      .article-detail h2 {
+      .custom-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+      }
+      .custom-card.selected {
+        border-color: var(--pink-dark);
+        background: var(--pink-soft);
+        box-shadow: 0 0 0 2px var(--pink-dark) inset;
+      }
+      .custom-icon {
+        font-size: 30px;
+        color: var(--pink-dark);
+        margin-bottom: 10px;
+      }
+      .custom-card h3 {
         font:
-          700 22px "Montserrat",
+          700 15px "Montserrat",
           sans-serif;
         color: var(--dark);
-        margin: 34px 0 12px;
-      }
-      .article-detail .article-list {
-        margin: 0 0 18px;
-        padding-left: 22px;
-        font-size: 16px;
-        line-height: 1.9;
-        color: #3d4047;
-      }
-      .article-detail .article-list li {
         margin-bottom: 6px;
       }
-      .article-detail img {
-        height: 420px;
-        border-radius: 7px;
-        margin: 25px 0;
+      .custom-card p {
+        font-size: 12px;
+        color: var(--muted);
       }
-      .article-detail h1 {
+      .custom-form {
+        background: white;
+        border: 1px solid var(--pink);
+        border-radius: 8px;
+        padding: 28px;
+        max-width: 760px;
+        margin: auto;
+        box-shadow: var(--shadow);
+      }
+      .custom-form h3 {
         font:
-          800 clamp(28px, 4vw, 42px) "Montserrat",
+          800 20px "Montserrat",
           sans-serif;
         color: var(--dark);
-        line-height: 1.2;
+        margin-bottom: 6px;
       }
-      .article-detail .article-text {
-        font-size: 15px;
-        color: #454b55;
-        white-space: pre-line;
-      }
-      .article-detail .eyebrow {
-        font-size: 17px;
-        letter-spacing: 3px;
-      }
-      .back-link {
-        display: block;
-        width: fit-content;
-        color: var(--brown);
+      .custom-form > p {
         font-size: 13px;
-        font-weight: 700;
-        margin-bottom: 20px;
+        color: var(--muted);
+        margin-bottom: 18px;
       }
-
-      /* Đánh giá khách hàng */
-      .customer-reviews {
-        background: var(--white);
+      .custom-form .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .custom-form textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+      .custom-form .btn {
+        width: 100%;
+        margin-top: 6px;
+      }
+      .selected-label {
+        font-size: 12px;
+        color: var(--pink-dark);
+        font-weight: 700;
+        margin-bottom: 14px;
+        min-height: 18px;
       }
       .review-grid {
         display: grid;
@@ -1082,10 +919,10 @@
       }
       .review-card {
         background: #fff;
-        border: 1px solid #e5e7eb;
+        border: 1px solid var(--pink);
         border-radius: 7px;
         padding: 25px;
-        box-shadow: 0 5px 20px rgba(30, 32, 38, 0.06);
+        box-shadow: 0 5px 20px rgba(212, 86, 122, 0.06);
         display: flex;
         flex-direction: column;
       }
@@ -1108,7 +945,7 @@
           sans-serif;
       }
       .review-quote {
-        color: #555b65;
+        color: #8a7078;
         font-size: 13px;
         line-height: 1.8;
         margin: 15px 0 22px;
@@ -1118,7 +955,7 @@
         display: flex;
         align-items: center;
         gap: 11px;
-        border-top: 1px solid #eceef1;
+        border-top: 1px solid var(--pink-light);
         padding-top: 16px;
       }
       .review-avatar {
@@ -1127,8 +964,8 @@
         border-radius: 50%;
         display: grid;
         place-items: center;
-        background: #eceef1;
-        color: var(--dark);
+        background: var(--pink-light);
+        color: var(--pink-dark);
         font-size: 12px;
         font-weight: 800;
       }
@@ -1144,15 +981,8 @@
         color: var(--muted);
         font-size: 10px;
       }
-      .review-note {
-        color: #777d87;
-        font-size: 10px;
-        text-align: center;
-        margin-top: 18px;
-      }
-
       .site-footer {
-        background: #2d2f34;
+        background: #2d2228;
         color: #f3f4f6;
         padding: 55px 0 18px;
       }
@@ -1163,37 +993,41 @@
         padding-bottom: 35px;
         align-items: start;
       }
-
-      /* Liên kết nhanh không gạch chân */
       .footer-col a {
         text-decoration: none;
       }
-
-      /* Giữ ba mục footer trên cùng một hàng ở màn hình nhỏ */
+      .footer-col p.fc-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .footer-col .fc-icon {
+        flex-shrink: 0;
+        width: 18px;
+        text-align: center;
+        color: #ffffff;
+        font-size: 16px;
+        line-height: 1.3;
+      }
       @media (max-width: 700px) {
         .footer-col h3 {
           font-size: 12px;
         }
-
         .footer-col a,
         .footer-col p,
         .footer-description {
           font-size: 10px;
         }
       }
-
-      /* Form đặt phòng cuộn được trên màn hình thấp hoặc nhỏ */
       #bookingForm {
         max-height: calc(100dvh - 40px);
         overflow-y: auto;
         overscroll-behavior: contain;
       }
-
       .modal-backdrop {
         overflow-y: auto;
         align-items: flex-start;
       }
-
       @media (min-height: 650px) {
         .modal-backdrop {
           align-items: center;
@@ -1203,11 +1037,11 @@
         font-size: 29px;
       }
       .footer-brand .brand-slogan {
-        color: #2f3a4a;
+        color: #f8c8d4;
       }
       .footer-description {
         font-size: 12px;
-        color: #d4d7de;
+        color: #e8dde2;
         max-width: 390px;
         margin-top: 18px;
       }
@@ -1222,7 +1056,7 @@
       .footer-col p {
         display: block;
         font-size: 12px;
-        color: #e0e2e7;
+        color: #e8dde2;
         margin: 10px 0;
         text-decoration: underline;
         text-underline-offset: 3px;
@@ -1233,7 +1067,6 @@
       .footer-col a:hover {
         color: #ffffff;
       }
-      /* Hai tiêu đề cột nằm cùng hàng ngang với logo + chữ 10HARDHOME */
       @media (min-width: 701px) {
         .footer-brand .brand {
           display: flex;
@@ -1255,12 +1088,12 @@
         padding-top: 17px;
         text-align: left;
         font-size: 11px;
-        color: #d4d7de;
+        color: #e8dde2;
       }
       .modal-backdrop {
         position: fixed;
         inset: 0;
-        background: rgba(18, 19, 22, 0.65);
+        background: rgba(45, 34, 40, 0.65);
         z-index: 2000;
         display: none;
         align-items: center;
@@ -1285,7 +1118,7 @@
         border: 0;
         background: none;
         font-size: 25px;
-        color: var(--brown);
+        color: var(--pink-dark);
       }
       .booking-modal h2 {
         font:
@@ -1298,6 +1131,37 @@
         font-size: 12px;
         color: var(--muted);
         margin-bottom: 20px;
+      }
+      .booking-preview {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        padding: 10px;
+        margin-bottom: 16px;
+        border: 1px solid var(--pink);
+        border-radius: 8px;
+        background: var(--pink-soft);
+      }
+      .booking-preview img {
+        width: 90px;
+        height: 90px;
+        border-radius: 6px;
+        object-fit: cover;
+        flex-shrink: 0;
+        background: var(--pink-light);
+      }
+      .booking-preview-info strong {
+        display: block;
+        font-family: "Montserrat", sans-serif;
+        font-size: 15px;
+        color: var(--dark);
+        margin-bottom: 4px;
+      }
+      .booking-preview-info span {
+        display: block;
+        font-size: 12px;
+        color: var(--pink-dark);
+        font-weight: 700;
       }
       .form-group {
         margin-bottom: 13px;
@@ -1313,7 +1177,7 @@
       .form-group textarea {
         width: 100%;
         padding: 11px;
-        border: 1px solid #d5d8de;
+        border: 1px solid var(--pink);
         border-radius: 4px;
         background: white;
         font:
@@ -1350,8 +1214,21 @@
         .room-grid {
           grid-template-columns: repeat(2, 1fr);
         }
-        .explore-grid {
+        .custom-grid {
           grid-template-columns: repeat(2, 1fr);
+        }
+        .about-row {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+        .about-row.reverse .about-row-img {
+          order: 1;
+        }
+        .about-row.reverse .about-row-text {
+          order: 2;
+        }
+        .about-story {
+          gap: 80px;
         }
         .nav-link {
           padding: 9px 10px;
@@ -1399,7 +1276,7 @@
           text-align: center;
         }
         .nav-link.active {
-          background: var(--tan);
+          background: var(--pink);
         }
         .hero {
           height: max(230px, 68vw);
@@ -1412,7 +1289,7 @@
           width: 32px;
           height: 32px;
           border-radius: 50%;
-          background: rgba(18, 19, 22, 0.5);
+          background: rgba(45, 34, 40, 0.5);
           opacity: 1;
           filter: none;
         }
@@ -1447,14 +1324,14 @@
         .hero-title br {
           display: none;
         }
-        .hero-title.christmas {
+        .hero-title.script {
           font-size: clamp(26px, 9vw, 40px);
           line-height: 1.05;
           letter-spacing: 1px;
           text-shadow:
             0 0 6px rgba(255, 255, 255, 0.4),
-            2px 2px 0 #b8322b,
-            4px 4px 8px rgba(0, 0, 0, 0.35);
+            2px 2px 0 var(--pink-dark),
+            4px 4px 8px rgba(0, 0, 0, 0.3);
         }
         .hero-desc {
           font-size: 12px;
@@ -1498,26 +1375,13 @@
         .room-actions .btn {
           width: 100%;
         }
-        .category-head {
-          align-items: start;
-          flex-direction: column;
-        }
         .category-head h2 {
           font-size: 21px;
         }
-        .split-banner,
-        .about-content,
         .contact-layout {
           grid-template-columns: 1fr;
         }
-        .split-content {
-          padding: 32px 25px;
-        }
-        .split-banner img {
-          min-height: 240px;
-          height: 240px;
-        }
-        .article-grid {
+        .custom-form .form-row {
           grid-template-columns: 1fr;
         }
         .review-grid {
@@ -1527,26 +1391,11 @@
         .review-card {
           padding: 21px;
         }
-        .article-card img {
-          height: 230px;
+        .about-row-img img {
+          height: 260px;
         }
-        .explore-grid {
-          gap: 13px;
-        }
-        .explore-card img {
-          height: 150px;
-        }
-        .explore-body {
-          padding: 12px;
-        }
-        .explore-body h3 {
-          font-size: 13px;
-        }
-        .explore-body p {
-          font-size: 11px;
-        }
-        .about-content img {
-          height: 280px;
+        .about-row-text h2 {
+          font-size: 21px;
         }
         .value-grid {
           grid-template-columns: 1fr;
@@ -1564,9 +1413,6 @@
         .footer-description {
           max-width: none;
         }
-        .article-detail img {
-          height: 260px;
-        }
       }
       @media (max-width: 390px) {
         .brand-name {
@@ -1578,12 +1424,10 @@
         .room-image {
           height: 200px;
         }
-        .explore-grid {
+        .custom-grid {
           grid-template-columns: 1fr;
         }
       }
-
-      /* ===== Chatbox ===== */
       .chat-fab {
         position: fixed;
         right: 24px;
@@ -1593,84 +1437,21 @@
         height: 58px;
         border-radius: 50%;
         border: 0;
-        background: var(--red);
+        background: var(--pink-dark);
         color: #fff;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 8px 24px rgba(30, 32, 38, 0.3);
+        box-shadow: 0 8px 24px rgba(212, 86, 122, 0.35);
         transition:
           transform 0.2s,
           background 0.2s;
-      }
-      /* Hiệu ứng gây chú ý */
-      .chat-fab {
         animation: chatPulse 2s infinite;
-      }
-
-      .chat-fab::before,
-      .chat-fab::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 50%;
-        border: 2px solid rgba(184, 50, 43, 0.5);
-        animation: ripple 2s infinite;
-      }
-
-      .chat-fab::after {
-        animation-delay: 1s;
-      }
-
-      @keyframes ripple {
-        0% {
-          transform: scale(1);
-          opacity: 0.8;
-        }
-        100% {
-          transform: scale(1.8);
-          opacity: 0;
-        }
-      }
-
-      @keyframes chatPulse {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.08);
-        }
-      }
-      .chat-fab {
-        animation:
-          chatPulse 2s infinite,
-          chatShake 6s infinite;
-      }
-
-      @keyframes chatShake {
-        0%,
-        90%,
-        100% {
-          transform: rotate(0deg);
-        }
-        92% {
-          transform: rotate(-8deg);
-        }
-        94% {
-          transform: rotate(8deg);
-        }
-        96% {
-          transform: rotate(-6deg);
-        }
-        98% {
-          transform: rotate(6deg);
-        }
       }
       .chat-fab:hover {
         transform: scale(1.08);
-        background: #a12a24;
+        background: #b03a5b;
       }
       .chat-fab svg {
         width: 28px;
@@ -1690,17 +1471,26 @@
       .chat-fab.open .ic-close {
         display: block;
       }
+      @keyframes chatPulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.08);
+        }
+      }
       .chat-box {
         position: fixed;
         right: 24px;
         bottom: 96px;
         z-index: 1500;
-        width: min(350px, calc(100vw - 32px));
-        height: min(500px, calc(100vh - 130px));
+        width: min(370px, calc(100vw - 32px));
+        height: min(540px, calc(100vh - 130px));
         background: #fff;
         border-radius: 14px;
-        border: 1px solid #e1e3e8;
-        box-shadow: 0 18px 50px rgba(30, 32, 38, 0.28);
+        border: 1px solid var(--pink);
+        box-shadow: 0 18px 50px rgba(212, 86, 122, 0.25);
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -1716,7 +1506,7 @@
         transform: none;
       }
       .chat-head {
-        background: #2b2d33;
+        background: var(--pink-dark);
         color: #fff;
         padding: 14px 16px;
         display: flex;
@@ -1727,7 +1517,7 @@
         width: 36px;
         height: 36px;
         border-radius: 50%;
-        background: var(--red);
+        background: rgba(255, 255, 255, 0.25);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1748,13 +1538,13 @@
       }
       .chat-head .sub {
         font-size: 11px;
-        color: #c6c9d0;
+        color: #fde8ee;
       }
       .chat-msgs {
         flex: 1;
         overflow-y: auto;
         padding: 14px;
-        background: #f6f7f9;
+        background: var(--pink-soft);
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -1770,47 +1560,57 @@
       }
       .chat-msg.bot {
         background: #fff;
-        border: 1px solid #e1e3e8;
+        border: 1px solid var(--pink-light);
         color: var(--ink);
         align-self: flex-start;
         border-bottom-left-radius: 4px;
       }
       .chat-msg.user {
-        background: var(--red);
+        background: var(--pink-dark);
         color: #fff;
         align-self: flex-end;
         border-bottom-right-radius: 4px;
       }
-      .chat-chips {
+      .chat-faqs {
+        border-top: 1px solid var(--pink-light);
+        background: #fff;
+        padding: 10px 12px;
         display: flex;
         flex-wrap: wrap;
         gap: 6px;
-        align-self: flex-start;
-        max-width: 94%;
       }
-      .chat-chip {
-        border: 1px solid #cfd3da;
-        background: #fff;
-        color: var(--ink);
-        padding: 6px 12px;
-        border-radius: 16px;
-        font-size: 12px;
+      .chat-faq-title {
+        width: 100%;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--muted);
+        margin-bottom: 2px;
+      }
+      .chat-faq {
+        border: 1px solid var(--pink);
+        background: var(--pink-soft);
+        color: var(--pink-dark);
+        padding: 5px 10px;
+        border-radius: 14px;
+        font-size: 11px;
         cursor: pointer;
+        transition: 0.2s;
       }
-      .chat-chip:hover {
-        background: var(--cream);
+      .chat-faq:hover {
+        background: var(--pink-dark);
+        color: #fff;
       }
       .chat-form {
         display: flex;
         gap: 8px;
         padding: 10px;
-        border-top: 1px solid #e1e3e8;
+        border-top: 1px solid var(--pink-light);
         background: #fff;
       }
       .chat-form input {
         flex: 1;
         min-width: 0;
-        border: 1px solid #d5d8de;
+        border: 1px solid var(--pink);
         border-radius: 20px;
         padding: 9px 14px;
         font: inherit;
@@ -1818,7 +1618,7 @@
       }
       .chat-form button {
         border: 0;
-        background: var(--red);
+        background: var(--pink-dark);
         color: #fff;
         border-radius: 50%;
         width: 38px;
@@ -1858,11 +1658,10 @@
         margin-bottom: 16px;
         padding: 20px;
         background: white;
-        border: 1px solid #e1e3e8;
+        border: 1px solid var(--pink-light);
         border-radius: 8px;
         box-shadow: var(--shadow);
       }
-
       .my-booking-image {
         width: 240px;
         height: 170px;
@@ -1870,29 +1669,21 @@
         object-fit: cover;
         flex-shrink: 0;
       }
-
       .my-booking-info {
         flex: 1;
         min-width: 0;
       }
-
       .my-booking-info h3 {
         font-family: "Montserrat", sans-serif;
         font-size: 17px;
         color: var(--dark);
         margin-bottom: 8px;
       }
-
       .my-booking-info p {
         font-size: 13px;
         color: var(--muted);
         margin: 6px 0;
       }
-
-      .my-booking-info .btn-cancel {
-        margin-top: 12px;
-      }
-
       .my-booking-actions {
         display: flex;
         align-items: center;
@@ -1900,22 +1691,35 @@
         gap: 8px 12px;
         margin-top: 12px;
       }
-
-      .my-booking-info .my-booking-actions .btn-cancel {
-        margin-top: 0;
-      }
-
       .my-booking-note {
         font-size: 12px;
         line-height: 1.45;
-        color: #218838;
+        color: var(--pink-dark);
       }
-
+      .custom-badge {
+        display: inline-block;
+        background: var(--pink-dark);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 10px;
+        margin-bottom: 8px;
+      }
+      .product-badge {
+        display: inline-block;
+        background: #f5c542;
+        color: #6b4d00;
+        font-size: 10px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 10px;
+        margin-bottom: 8px;
+      }
       @media (max-width: 600px) {
         .my-booking-card {
           flex-direction: column-reverse;
         }
-
         .my-booking-image {
           width: 100%;
           height: 200px;
@@ -1933,18 +1737,14 @@
             showPage('home');
             return false;
           "
-          aria-label="10HARDHOME - Trang chủ"
+          aria-label="NẮNG FLOWER - Trang chủ"
         >
+          <!-- Không còn ảnh logo, chỉ còn chữ NẮNG FLOWER cách nhau khoảng nhỏ -->
           <span class="brand-name logo-brand">
-            <img
-              src="images/logo_512x512_edge.png"
-              alt="10H Logo"
-              class="brand-logo"
-            />
-            <span class="brand-harh">HARD</span>
-            <span class="brand-home">HOME</span>
+            <span class="brand-nang brand-word">NẮNG</span>
+            <span class="brand-flower brand-word">FLOWER</span>
           </span>
-          <span class="brand-slogan">Đi để trở về</span>
+          <span class="brand-slogan">Trao gửi yêu thương</span>
         </a>
         <div class="nav-wrap">
           <nav class="main-nav" id="mainNav">
@@ -1954,12 +1754,10 @@
               aria-hidden="true"
             ></span>
             <a class="nav-link active" href="#" data-page="home">Trang chủ</a>
-            <a class="nav-link" href="#" data-page="services">Dịch vụ</a>
+            <a class="nav-link" href="#" data-page="services">Sản phẩm</a>
             <a class="nav-link" href="#" data-page="about">Giới thiệu</a>
             <a class="nav-link" href="#" data-page="contact">Liên hệ</a>
-            <a class="nav-link" href="#" data-page="mybookings"
-              >Phòng của tôi</a
-            >
+            <a class="nav-link" href="#" data-page="mybookings">Đơn của tôi</a>
           </nav>
           <button
             class="search-toggle"
@@ -1980,14 +1778,13 @@
             <input
               id="searchInput"
               type="search"
-              placeholder="Tìm tên phòng, hạng phòng..."
+              placeholder="Tìm tên hoa, loại hoa..."
               autocomplete="off"
             />
-            <datalist id="roomSuggestions"></datalist>
             <button class="btn btn-primary" id="searchButton">Tìm</button>
           </div>
           <div class="search-results" id="searchResults">
-            Nhập từ khóa để tìm phòng phù hợp.
+            Nhập từ khóa để tìm loài hoa phù hợp.
           </div>
         </div>
       </div>
@@ -1997,80 +1794,83 @@
       <!-- TRANG CHỦ -->
       <section class="page active" id="homePage">
         <div class="hero" id="hero">
-          <!-- Banner 1 -->
-          <div class="hero-layer active" data-slide="0" data-action="services">
-            <img
-              src="https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.99422-6/895791933_1113732614804120_4249700099575436478_n.png?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=100&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=z08HPwR2Z9YQ7kNvwH3y2tB&_nc_oc=AdpfJGFDQIuypE3x7pbHTb-GFIXJg3wo1LkNJxrOHBlbciayJXV2C0P-s5fFfRHeMg3-rziO3mlt1yThaYfaqX3v&_nc_zt=14&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=vC-dMjlcLdMDVCovePV79g&_nc_ss=7b2a8&oh=00_AQSX_1og2U0j15OQsLxomHvEb5SAaoKzpDqvFGvZQVoyag&oe=6AF8C6DA"
-              alt="Khung cảnh Đà Lạt mùa lễ hội"
-            />
+          <!-- Banner 1: video đơn, dán 3 link video vào mảng HERO_VIDEOS, mỗi video 2 giây -->
+          <div class="hero-layer active" data-slide="0">
+            <div class="hero-video-stage" aria-hidden="true">
+              <video
+                id="heroVideoA"
+                class="hero-video-item is-active"
+                autoplay
+                muted
+                playsinline
+                preload="auto"
+              ></video>
+              <video
+                id="heroVideoB"
+                class="hero-video-item"
+                muted
+                playsinline
+                preload="auto"
+              ></video>
+            </div>
             <div class="hero-content">
-              <div class="hero-kicker">Mùa đông trên thành phố ngàn hoa</div>
-              <h1 class="hero-title christmas">Merry <br />Christmas</h1>
+              <div class="hero-kicker">Mùa hoa trên thành phố ngàn hoa</div>
+              <h1 class="hero-title script">Flower<br />Season</h1>
               <p class="hero-desc">
-                Đón mùa lễ hội trong không gian ấm áp, bình yên giữa lòng Đà
-                Lạt.
+                Đón mùa hoa nở rộ trong không gian rực rỡ, thơm ngát giữa lòng
+                Đà Lạt.
               </p>
               <button class="btn btn-primary" onclick="showPage('services')">
-                Đặt phòng ngay
+                Đặt hoa ngay
               </button>
             </div>
           </div>
-          <!-- Banner 2 -->
-          <div class="hero-layer" data-slide="1" data-action="services">
+          <div class="hero-layer" data-slide="1">
             <img
-              src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1900&q=85"
-              alt="Không gian phòng nghỉ ấm cúng"
+              src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1900&q=85"
+              alt="Bó hoa hồng đẹp"
             />
             <div class="hero-content">
               <div class="hero-kicker">Không gian dành riêng cho bạn</div>
-              <h2 class="hero-title">Thoải mái <br />lựa chọn</h2>
+              <h2 class="hero-title">Hoa tươi<br />mỗi ngày</h2>
               <p class="hero-desc">
-                Nhiều hạng phòng với phong cách riêng, phù hợp cho mọi chuyến
-                đi.
+                Nhiều loại hoa với phong cách riêng, phù hợp cho mọi dịp đặc
+                biệt.
               </p>
               <button class="btn btn-primary" onclick="showPage('services')">
-                Khám phá phòng
+                Khám phá hoa
               </button>
             </div>
           </div>
-          <!-- Banner 3 -->
-          <div class="hero-layer" data-slide="2" data-action="guide">
+          <div class="hero-layer" data-slide="2">
             <img
-              src="https://i.pinimg.com/1200x/36/cb/6e/36cb6ebe2baff9c2f37bba545639b030.jpg"
-              alt="Du khách khám phá thiên nhiên"
+              src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=1900&q=85"
+              alt="Cửa hàng hoa"
             />
             <div class="hero-content">
-              <div class="hero-kicker">Gợi ý cho chuyến đi</div>
-              <h2 class="hero-title">Cẩm nang <br />vi vu</h2>
+              <div class="hero-kicker">Câu chuyện của chúng tôi</div>
+              <h2 class="hero-title">Trao gửi<br />yêu thương</h2>
               <p class="hero-desc">
-                Bỏ túi những kinh nghiệm hay để hành trình Đà Lạt thêm trọn vẹn.
+                Mỗi bó hoa là một lời nhắn gửi chân thành từ NẮNG FLOWER.
               </p>
-              <button
-                class="btn btn-primary"
-                onclick="scrollToSection('guide')"
-              >
-                Đọc cẩm nang
+              <button class="btn btn-primary" onclick="showPage('about')">
+                Tìm hiểu thêm
               </button>
             </div>
           </div>
-          <!-- Banner 4 -->
-          <div class="hero-layer" data-slide="3" data-action="explore">
+          <div class="hero-layer" data-slide="3">
             <img
-              src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/773509083_122115854499336402_312758782847317149_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1152&ctp=s2048x1152&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=LxbU0tMnyH0Q7kNvwHZfCl9&_nc_oc=Adp5YZlQtKGDOCXPOo4j6mkBWAXkUp2Qp3XZ7irmV_0WKpJyL0d7QFHvoz1SoGhI5Em5Pgb-zD77Q8l50xoRI7Qe&_nc_zt=23&_nc_ht=scontent.fsgn2-5.fna&_nc_gid=gmOLRFlwZJNWd_0n3Nk42A&_nc_ss=7b2a8&oh=00_AQR1-fqIKzlaQtE1XG2v7RoVY1Z6IyzgU7l5lBxYHVJYVQ&oe=6AFA4C3A"
-              alt="Nhóm bạn cùng đi du lịch"
+              src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=1900&q=85"
+              alt="Đặt hoa"
             />
             <div class="hero-content">
-              <div class="hero-kicker">Đi cùng nhau, vui hơn nhiều</div>
-              <h2 class="hero-title">Cùng khám phá Đà Lạt</h2>
+              <div class="hero-kicker">Đặt hoa dễ dàng</div>
+              <h2 class="hero-title">Giao hoa<br />tận nơi</h2>
               <p class="hero-desc">
-                Từ góc phố nhỏ đến những điểm đến nổi tiếng, Đà Lạt luôn có điều
-                mới mẻ.
+                Đặt hoa online, chúng tôi giao tận tay người nhận trong ngày.
               </p>
-              <button
-                class="btn btn-primary"
-                onclick="scrollToSection('explore')"
-              >
-                Khám phá ngay
+              <button class="btn btn-primary" onclick="showPage('services')">
+                Đặt hoa ngay
               </button>
             </div>
           </div>
@@ -2089,10 +1889,10 @@
             </svg>
           </button>
           <div class="hero-dots" id="heroDots">
-            <button class="hero-dot active" aria-label="Banner 1"></button
-            ><button class="hero-dot" aria-label="Banner 2"></button
-            ><button class="hero-dot" aria-label="Banner 3"></button
-            ><button class="hero-dot" aria-label="Banner 4"></button>
+            <button class="hero-dot active" aria-label="Banner 1"></button>
+            <button class="hero-dot" aria-label="Banner 2"></button>
+            <button class="hero-dot" aria-label="Banner 3"></button>
+            <button class="hero-dot" aria-label="Banner 4"></button>
           </div>
         </div>
 
@@ -2100,63 +1900,56 @@
           <div class="container">
             <div class="section-heading">
               <span class="eyebrow">Lựa chọn hàng đầu</span>
-              <h2 class="section-title">PHÒNG NỔI BẬT NHẤT</h2>
+              <h2 class="section-title">HOA NỔI BẬT NHẤT</h2>
               <p class="section-intro">
-                Những không gian được yêu thích, sẵn sàng đồng hành cùng kỳ nghỉ
-                của bạn.
+                Những bó hoa được yêu thích, sẵn sàng đồng hành cùng mọi khoảnh
+                khắc của bạn.
               </p>
             </div>
             <div class="room-grid featured-grid" id="featuredRooms"></div>
+            <div class="category-actions">
+              <button class="view-more" onclick="showPage('services')">
+                Xem thêm
+              </button>
+            </div>
           </div>
         </section>
 
-        <section class="section soft sec-rooms">
+        <section class="section sec-rooms">
           <div class="container">
             <div class="section-heading">
-              <span class="eyebrow">Không gian nghỉ dưỡng</span>
-              <h2 class="section-title">CÁC HẠNG PHÒNG</h2>
+              <span class="eyebrow">Không gian hoa tươi</span>
+              <h2 class="section-title">CÁC LOẠI HOA</h2>
               <p class="section-intro">
-                Dù đi một mình, đi cùng người thương hay cả gia đình, 10HARDHOME
-                đều có lựa chọn phù hợp.
+                Dù tặng người thương, gia đình hay bạn bè, NẮNG FLOWER đều có
+                lựa chọn phù hợp.
               </p>
             </div>
             <div id="homeCategories"></div>
           </div>
         </section>
 
-        <section class="section sec-guide" id="guide">
+        <section class="section sec-custom" id="homeCustomSection">
           <div class="container">
             <div class="section-heading">
-              <span class="eyebrow">Chuẩn bị cho chuyến đi</span>
-              <h2 class="section-title">CẨM NANG VI VU</h2>
+              <span class="eyebrow">Thiết kế riêng cho bạn</span>
+              <h2 class="section-title">ĐẶT HOA THEO YÊU CẦU</h2>
               <p class="section-intro">
-                Một vài gợi ý nhỏ để bạn tận hưởng Đà Lạt theo cách riêng.
+                Chọn mục đích tặng hoa và mô tả chi tiết, NẮNG FLOWER sẽ thiết
+                kế bó hoa riêng cho bạn.
               </p>
             </div>
-            <div class="article-grid" id="guideCards"></div>
-          </div>
-        </section>
-
-        <section class="section soft sec-explore" id="explore">
-          <div class="container">
-            <div class="section-heading">
-              <span class="eyebrow">Thành phố ngàn hoa</span>
-              <h2 class="section-title">KHÁM PHÁ ĐÀ LẠT</h2>
-              <p class="section-intro">
-                Lưu lại những điểm đến thú vị cho hành trình sắp tới.
-              </p>
-            </div>
-            <div class="explore-grid" id="exploreCards"></div>
+            <div id="homeCustomBlock"></div>
           </div>
         </section>
 
         <section class="section customer-reviews" id="reviews">
           <div class="container">
             <div class="section-heading">
-              <span class="eyebrow">Trải nghiệm lưu trú</span>
-              <h2 class="section-title">KHÁCH HÀNG NÓI GÌ VỀ 10HARDHOME?</h2>
+              <span class="eyebrow">Trải nghiệm khách hàng</span>
+              <h2 class="section-title">KHÁCH HÀNG NÓI GÌ VỀ NẮNG FLOWER?</h2>
               <p class="section-intro">
-                Những cảm nhận nổi bật sau hành trình nghỉ dưỡng tại 10HARDHOME.
+                Những cảm nhận nổi bật sau khi nhận hoa từ NẮNG FLOWER.
               </p>
             </div>
             <div class="review-grid">
@@ -2164,15 +1957,12 @@
                 <div class="review-stars" aria-label="5 trên 5 sao">★★★★★</div>
                 <div class="review-score">5.0 <span>/ 5.0</span></div>
                 <p class="review-quote">
-                  “Không gian sạch sẽ, ấm cúng và rất dễ chịu. Nhân viên thân
-                  thiện, hỗ trợ nhiệt tình nên chuyến đi Đà Lạt của mình trọn
-                  vẹn hơn rất nhiều.”
+                  "Hoa tươi lâu, đẹp đúng như hình. Nhân viên tư vấn nhiệt tình,
+                  giao hoa đúng hẹn nên mình rất hài lòng."
                 </p>
                 <div class="review-author">
                   <span class="review-avatar">MA</span>
-                  <div>
-                    <strong>Minh Anh</strong><small>Khách lưu trú</small>
-                  </div>
+                  <div><strong>Minh Anh</strong><small>Khách hàng</small></div>
                 </div>
               </article>
               <article class="review-card">
@@ -2181,14 +1971,13 @@
                 </div>
                 <div class="review-score">4.8 <span>/ 5.0</span></div>
                 <p class="review-quote">
-                  “Phòng đúng như hình, bài trí đẹp và có cảm giác gần gũi như ở
-                  nhà. Vị trí thuận tiện để di chuyển đến những địa điểm tham
-                  quan.”
+                  "Bó hoa đúng như mô tả, màu sắc hài hòa và thơm. Mình đặt tặng
+                  mẹ và mẹ rất thích."
                 </p>
                 <div class="review-author">
                   <span class="review-avatar">QT</span>
                   <div>
-                    <strong>Quốc Thịnh</strong><small>Khách lưu trú</small>
+                    <strong>Quốc Thịnh</strong><small>Khách hàng</small>
                   </div>
                 </div>
               </article>
@@ -2198,15 +1987,12 @@
                 </div>
                 <div class="review-score">4.6 <span>/ 5.0</span></div>
                 <p class="review-quote">
-                  “Mình hài lòng với sự yên tĩnh và cách phục vụ chu đáo ở đây.
-                  Đây sẽ là một trong những lựa chọn mình cân nhắc cho lần trở
-                  lại Đà Lạt.”
+                  "Dịch vụ chu đáo, hoa được gói cẩn thận. Sẽ tiếp tục ủng hộ
+                  cửa hàng trong những dịp sau."
                 </p>
                 <div class="review-author">
                   <span class="review-avatar">HL</span>
-                  <div>
-                    <strong>Hà Linh</strong><small>Khách lưu trú</small>
-                  </div>
+                  <div><strong>Hà Linh</strong><small>Khách hàng</small></div>
                 </div>
               </article>
             </div>
@@ -2214,20 +2000,34 @@
         </section>
       </section>
 
-      <!-- TRANG DỊCH VỤ -->
+      <!-- TRANG SẢN PHẨM -->
       <section class="page" id="servicesPage">
         <div class="page-banner">
           <img
-            src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=1800&q=85"
-            alt="Homestay giữa rừng thông"
+            src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=1800&q=85"
+            alt="Sản phẩm hoa"
           />
           <div class="page-banner-content">
-            <h1>Dịch vụ phòng nghỉ</h1>
-            <p>Tìm không gian phù hợp cho chuyến đi Đà Lạt của bạn</p>
+            <h1>Những bông hoa đẹp nhất</h1>
+            <p>Dành cho bạn và những người yêu quý</p>
           </div>
         </div>
         <section class="section">
           <div class="container" id="serviceCategories"></div>
+        </section>
+
+        <section class="section sec-custom" id="serviceCustomSection">
+          <div class="container">
+            <div class="section-heading">
+              <span class="eyebrow">Thiết kế riêng cho bạn</span>
+              <h2 class="section-title">ĐẶT HOA THEO YÊU CẦU</h2>
+              <p class="section-intro">
+                Chọn mục đích tặng hoa và mô tả chi tiết, NẮNG FLOWER sẽ thiết
+                kế bó hoa riêng cho bạn.
+              </p>
+            </div>
+            <div id="serviceCustomBlock"></div>
+          </div>
         </section>
       </section>
 
@@ -2235,74 +2035,136 @@
       <section class="page" id="aboutPage">
         <div class="page-banner">
           <img
-            src="https://cdn.pixabay.com/photo/2020/05/18/12/52/vietnam-5186118_1280.jpg"
-            alt="Không gian nghỉ dưỡng Đà Lạt"
+            src="https://images.unsplash.com/photo-1487070183336-b863922373d4?auto=format&fit=crop&w=1800&q=85"
+            alt="Không gian cửa hàng hoa"
           />
           <div class="page-banner-content">
-            <h1>Về 10HARDHOME</h1>
-            <p>Đi để trở về – trở về với những điều bình dị</p>
+            <h1
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              <span style="color: #fff">Về NẮNG</span>
+              <span style="color: #fde8ee">FLOWER</span>
+            </h1>
+            <p>Trao trọn yêu thương</p>
           </div>
         </div>
         <section class="section">
           <div class="container">
-            <div class="about-content">
-              <img
-                src="https://i.pinimg.com/736x/a5/a0/e1/a5a0e1db3535447a197f780f45719614.jpg"
-                alt="Không gian sinh hoạt ấm cúng"
-              />
-              <div class="about-copy">
-                <span class="eyebrow">Câu chuyện của chúng tôi</span>
-                <h2>Một chốn dừng chân giữa lòng Đà Lạt</h2>
-                <p>
-                  10HARDHOME được xây dựng với mong muốn mang đến một nơi nghỉ
-                  ngơi gần gũi, thoải mái và ấm áp cho những ai yêu thành phố Đà
-                  Lạt.
-                </p>
-                <p>
-                  Chúng tôi tin rằng một chuyến đi đáng nhớ không chỉ đến từ
-                  những điểm tham quan đẹp, mà còn từ cảm giác dễ chịu khi trở
-                  về nơi lưu trú sau một ngày dài khám phá.
-                </p>
-                <p>
-                  Với nhiều lựa chọn phòng nghỉ và sự hỗ trợ tận tình,
-                  10HARDHOME mong muốn trở thành một phần thân thương trong hành
-                  trình của bạn. Mỗi căn phòng đều được hướng đến sự tiện nghi,
-                  sạch sẽ và cảm giác dễ chịu, để bạn có thể nghỉ ngơi thật trọn
-                  vẹn sau những giờ vui chơi, tham quan.
-                </p>
-                <p>
-                  Không chỉ là nơi lưu trú, chúng tôi mong 10HARDHOME còn là
-                  điểm bắt đầu cho những trải nghiệm đáng nhớ tại Đà Lạt. Từ
-                  việc hỗ trợ thông tin nhận phòng, gợi ý địa điểm ăn uống đến
-                  chia sẻ những góc tham quan thú vị, chúng tôi luôn cố gắng
-                  giúp chuyến đi của bạn thuận tiện và nhiều kỷ niệm hơn.
-                </p>
-                <p>
-                  Dù bạn đến Đà Lạt để nghỉ dưỡng, khám phá cùng bạn bè hay dành
-                  thời gian bên gia đình, 10HARDHOME hy vọng sẽ mang đến một
-                  không gian thân thiện để mỗi lần ghé thăm đều là một lần trở
-                  về với sự bình yên và gần gũi.
-                </p>
-                <button class="btn btn-primary" onclick="showPage('services')">
-                  Khám phá phòng nghỉ →
-                </button>
+            <div class="about-story">
+              <div class="about-row">
+                <div class="about-row-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=85"
+                    alt="Hoa tươi tại cửa hàng"
+                  />
+                </div>
+                <div class="about-row-text">
+                  <span class="eyebrow">Câu chuyện của chúng tôi</span>
+                  <h2>Một chốn hoa giữa lòng Đà Lạt</h2>
+                  <p>
+                    NẮNG FLOWER được xây dựng với mong muốn mang đến những bó
+                    hoa tươi, đẹp và tràn đầy cảm xúc cho những ai yêu hoa và
+                    yêu Đà Lạt. Giữa thành phố ngàn hoa, chúng tôi chọn một góc
+                    nhỏ để mỗi ngày được chăm chút từng cành hoa, gói ghém từng
+                    món quà trao tay khách hàng.
+                  </p>
+                  <p>
+                    Chúng tôi tin rằng một món quà ý nghĩa không chỉ đến từ vẻ
+                    ngoài đẹp, mà còn từ cảm giác ấm áp khi người nhận được trao
+                    gửi yêu thương. Vì vậy, mỗi bó hoa tại NẮNG FLOWER đều được
+                    chọn lọc kỹ càng, từ màu sắc, kiểu dáng đến cách gói, để bạn
+                    có thể gửi gắm trọn vẹn tình cảm của mình.
+                  </p>
+                </div>
+              </div>
+
+              <div class="about-row reverse">
+                <div class="about-row-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=85"
+                    alt="Chọn hoa mỗi ngày"
+                  />
+                </div>
+                <div class="about-row-text">
+                  <span class="eyebrow">Sứ mệnh của chúng tôi</span>
+                  <h2>Hoa tươi mỗi ngày, tình cảm trọn vẹn</h2>
+                  <p>
+                    Với nhiều lựa chọn hoa và sự hỗ trợ tận tình, NẮNG FLOWER
+                    mong muốn trở thành một phần thân thương trong mọi khoảnh
+                    khắc của bạn. Mỗi bó hoa đều được hướng đến sự tươi mới,
+                    sạch sẽ và cảm giác dễ chịu, để bạn có thể trao gửi yêu
+                    thương thật trọn vẹn.
+                  </p>
+                  <p>
+                    Không chỉ là nơi bán hoa, chúng tôi mong NẮNG FLOWER còn là
+                    điểm bắt đầu cho những trải nghiệm đáng nhớ tại Đà Lạt. Từ
+                    việc hỗ trợ thông tin, gợi ý loại hoa phù hợp đến chia sẻ
+                    những góc tham quan thú vị, chúng tôi luôn cố gắng giúp mọi
+                    dịp của bạn thuận tiện và nhiều kỷ niệm hơn.
+                  </p>
+                </div>
+              </div>
+
+              <div class="about-row">
+                <div class="about-row-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=800&q=85"
+                    alt="Giao hoa tận nơi"
+                  />
+                </div>
+                <div class="about-row-text">
+                  <span class="eyebrow">Cam kết của chúng tôi</span>
+                  <h2>Đồng hành cùng mọi khoảnh khắc</h2>
+                  <p>
+                    Dù bạn tìm hoa để tặng người thương, gia đình hay bạn bè,
+                    NẮNG FLOWER hy vọng sẽ mang đến một không gian thân thiện để
+                    mỗi lần ghé thăm đều là một lần trao gửi yêu thương. Chúng
+                    tôi luôn lắng nghe để thấu hiểu, tư vấn để bạn chọn được bó
+                    hoa ưng ý nhất.
+                  </p>
+                  <p>
+                    Với dịch vụ giao hoa tận nơi trong ngày, NẮNG FLOWER mong
+                    được đồng hành cùng bạn trên mọi hành trình – từ những dịp
+                    lễ quan trọng đến những ngày bình dị cần một chút ngọt ngào.
+                    Hãy để chúng tôi thay bạn gửi gắm yêu thương đến những người
+                    thân yêu.
+                  </p>
+                  <button
+                    class="btn btn-primary"
+                    onclick="showPage('services')"
+                  >
+                    Khám phá hoa
+                  </button>
+                </div>
               </div>
             </div>
+
             <div class="value-grid">
               <div class="value-card">
-                <div class="value-icon">⌂</div>
-                <h3>Ấm áp</h3>
-                <p>Không gian gần gũi, tạo cảm giác thoải mái như ở nhà.</p>
+                <div class="value-icon">✿</div>
+                <h3>Tươi mới</h3>
+                <p>Hoa được chọn lọc mỗi ngày, đảm bảo độ tươi và đẹp.</p>
               </div>
               <div class="value-card">
                 <div class="value-icon">♡</div>
                 <h3>Tận tâm</h3>
-                <p>Luôn lắng nghe và hỗ trợ khách hàng trong suốt kỳ nghỉ.</p>
+                <p>
+                  Luôn lắng nghe và hỗ trợ khách hàng trong suốt quá trình đặt
+                  hoa.
+                </p>
               </div>
               <div class="value-card">
                 <div class="value-icon">✦</div>
-                <h3>Trải nghiệm</h3>
-                <p>Gợi ý những điều thú vị để bạn khám phá Đà Lạt trọn vẹn.</p>
+                <h3>Sáng tạo</h3>
+                <p>
+                  Gợi ý những bó hoa độc đáo để bạn trao gửi yêu thương trọn
+                  vẹn.
+                </p>
               </div>
             </div>
           </div>
@@ -2313,12 +2175,12 @@
       <section class="page" id="contactPage">
         <div class="page-banner">
           <img
-            src="https://cdn.pixabay.com/photo/2023/04/01/00/50/hills-7891103_1280.jpg"
-            alt="Đà Lạt nhìn từ trên cao"
+            src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=1800&q=85"
+            alt="Liên hệ"
           />
           <div class="page-banner-content">
             <h1>Liên hệ với chúng tôi</h1>
-            <p>10HARDHOME luôn sẵn sàng đồng hành cùng chuyến đi của bạn</p>
+            <p>NẮNG FLOWER luôn sẵn sàng đồng hành cùng bạn</p>
           </div>
         </div>
         <section class="section">
@@ -2332,7 +2194,7 @@
               ></iframe>
               <div class="contact-card">
                 <span class="eyebrow">Thông tin hỗ trợ</span>
-                <h2>Kết nối cùng 10HARDHOME</h2>
+                <h2>Kết nối cùng NẮNG FLOWER</h2>
                 <div class="contact-item">
                   <span class="contact-icon">⌖</span>
                   <div>
@@ -2344,8 +2206,8 @@
                   <span class="contact-icon">✉</span>
                   <div>
                     <strong>Email</strong
-                    ><a href="mailto:10hardhome@gmail.com"
-                      >10hardhome@gmail.com</a
+                    ><a href="mailto:nangflower@gmail.com"
+                      >nangflower@gmail.com</a
                     >
                   </div>
                 </div>
@@ -2356,29 +2218,29 @@
                     ><a href="tel:+84909090909">+84 909090909</a>
                   </div>
                 </div>
+                <div class="contact-item">
+                  <span class="contact-icon">◷</span>
+                  <div>
+                    <strong>Giờ mở cửa</strong
+                    ><span>7:00 – 21:00 hằng ngày</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </section>
 
-      <!-- TRANG CHI TIẾT BÀI VIẾT -->
-      <section class="page" id="articlePage">
-        <section class="section">
-          <div class="container article-detail" id="articleDetail"></div>
-        </section>
-      </section>
-
-      <!-- TRANG PHÒNG CỦA TÔI -->
+      <!-- TRANG ĐƠN CỦA TÔI -->
       <section class="page" id="mybookingsPage">
         <div class="page-banner">
           <img
-            src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1800&q=85"
-            alt="Không gian phòng nghỉ đã đặt"
+            src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1800&q=85"
+            alt="Đơn hoa đã đặt"
           />
           <div class="page-banner-content">
-            <h1>Phòng của tôi</h1>
-            <p>Quản lý các yêu cầu đặt phòng của bạn</p>
+            <h1>Đơn của tôi</h1>
+            <p>Quản lý đơn đặt hoa và đơn đặt hoa theo yêu cầu</p>
           </div>
         </div>
         <section class="section">
@@ -2401,19 +2263,17 @@
                 return false;
               "
             >
+              <!-- Footer cũng bỏ ảnh logo, chỉ còn chữ -->
               <span class="brand-name logo-brand">
-                <img
-                  src="images/logo_512x512_edge.png"
-                  alt="10H Logo"
-                  class="brand-logo"
-                />
-                <span style="color: #fff">HARD</span>
-                <span style="color: #c9aa8b">HOME</span>
+                <span class="brand-nang brand-word" style="color: #fff"
+                  >NẮNG</span
+                >
+                <span class="brand-flower brand-word">FLOWER</span>
               </span>
             </a>
             <p class="footer-description">
-              10HARDHOME luôn đồng hành cùng bạn trên mỗi hành trình khám phá Đà
-              Lạt. Chúng tôi mong muốn mang đến không gian nghỉ dưỡng ấm áp,
+              NẮNG FLOWER luôn đồng hành cùng bạn trên mỗi hành trình trao gửi
+              yêu thương. Chúng tôi mong muốn mang đến những bó hoa tươi đẹp,
               thoải mái và những trải nghiệm đáng nhớ.
             </p>
           </div>
@@ -2426,54 +2286,62 @@
                 return false;
               "
               >Trang chủ</a
-            ><a
+            >
+            <a
               href="#"
               onclick="
                 showPage('services');
                 return false;
               "
-              >Dịch vụ</a
-            ><a
+              >Sản phẩm</a
+            >
+            <a
               href="#"
               onclick="
                 showPage('about');
                 return false;
               "
               >Giới thiệu</a
-            ><a
+            >
+            <a
               href="#"
               onclick="
                 showPage('contact');
                 return false;
               "
               >Liên hệ</a
-            ><a
+            >
+            <a
               href="#"
               onclick="
                 showPage('mybookings');
                 return false;
               "
-              >Phòng của tôi</a
+              >Đơn của tôi</a
             >
           </div>
           <div class="footer-col">
             <h3>Thông tin liên hệ</h3>
             <p class="fc-item">
               <span class="fc-icon">⌖</span
-              ><span>Địa chỉ: Đà Lạt, Lâm Đồng</span>
+              ><span>Địa chỉ: Thành phố Đà Lạt, tỉnh Lâm Đồng, Việt Nam</span>
             </p>
             <p class="fc-item">
               <span class="fc-icon">✉</span
-              ><span>Email: 10hardhome@gmail.com</span>
+              ><span>Email: nangflower@gmail.com</span>
             </p>
             <p class="fc-item">
               <span class="fc-icon">☎</span
               ><span>Điện thoại: +84 909090909</span>
             </p>
+            <p class="fc-item">
+              <span class="fc-icon">◷</span
+              ><span>Giờ mở cửa: 7:00 – 21:00 hằng ngày</span>
+            </p>
           </div>
         </div>
         <div class="copyright">
-          © 10HARDHOME. Đồng hành cùng bạn khám phá Đà Lạt.
+          © NẮNG FLOWER. Trao gửi yêu thương mỗi ngày.
         </div>
       </div>
     </footer>
@@ -2488,15 +2356,22 @@
         >
           ×
         </button>
-        <h2>Đặt phòng</h2>
-        <p>Gửi thông tin để 10HARDHOME liên hệ tư vấn cho bạn.</p>
-        <div class="form-group">
-          <label for="bookingRoom">Hạng phòng</label
-          ><input id="bookingRoom" name="room" readonly />
+        <h2>Đặt hoa</h2>
+        <p>Gửi thông tin để NẮNG FLOWER liên hệ tư vấn cho bạn.</p>
+        <div class="booking-preview" id="bookingPreview">
+          <img id="bookingImage" src="" alt="Ảnh hoa được chọn" />
+          <div class="booking-preview-info">
+            <strong id="bookingPreviewName">Loại hoa</strong>
+            <span id="bookingPreviewPrice">Giá</span>
+          </div>
         </div>
         <div class="form-group">
-          <label for="guestName">Họ và tên</label
-          ><input
+          <label for="bookingRoom">Loại hoa</label>
+          <input id="bookingRoom" name="room" readonly />
+        </div>
+        <div class="form-group">
+          <label for="guestName">Họ và tên</label>
+          <input
             id="guestName"
             name="name"
             required
@@ -2504,8 +2379,8 @@
           />
         </div>
         <div class="form-group">
-          <label for="guestPhone">Số điện thoại</label
-          ><input
+          <label for="guestPhone">Số điện thoại</label>
+          <input
             id="guestPhone"
             name="phone"
             required
@@ -2514,26 +2389,32 @@
           />
         </div>
         <div class="form-group">
-          <label for="checkin">Ngày nhận phòng</label
-          ><input id="checkin" name="checkin" type="date" required />
+          <label for="guestAddress">Địa chỉ giao hoa</label>
+          <input
+            id="guestAddress"
+            name="address"
+            required
+            placeholder="Nhập địa chỉ nhận hoa"
+          />
         </div>
         <div class="form-group">
-          <label for="checkout">Ngày trả phòng</label
-          ><input id="checkout" name="checkout" type="date" required />
+          <label for="checkout">Ngày giao hoa</label>
+          <input id="checkout" name="checkout" type="date" required />
         </div>
         <div class="form-group">
-          <label for="guestNote">Ghi chú</label
-          ><textarea
+          <label for="guestNote">Ghi chú</label>
+          <textarea
             id="guestNote"
             name="note"
-            placeholder="Số lượng khách hoặc yêu cầu khác..."
+            placeholder="Số lượng hoa hoặc yêu cầu khác..."
           ></textarea>
         </div>
         <button class="btn btn-primary" type="submit">
-          Gửi yêu cầu đặt phòng
+          Gửi yêu cầu đặt hoa
         </button>
       </form>
     </div>
+
     <button
       class="chat-fab"
       id="chatFab"
@@ -2552,11 +2433,12 @@
         <line x1="18" y1="6" x2="6" y2="18" />
       </svg>
     </button>
+
     <div
       class="chat-box"
       id="chatBox"
       role="dialog"
-      aria-label="Hỗ trợ trực tuyến 10HARDHOME"
+      aria-label="Hỗ trợ trực tuyến NẮNG FLOWER"
     >
       <div class="chat-head">
         <div class="avatar">
@@ -2567,11 +2449,44 @@
           </svg>
         </div>
         <div>
-          <strong>Trợ lý 10HARDHOME</strong
-          ><span class="sub">Trả lời tự động</span>
+          <strong>Trợ lý NẮNG FLOWER</strong>
+          <span class="sub">Trả lời tự động</span>
         </div>
       </div>
       <div class="chat-msgs" id="chatMsgs" aria-live="polite"></div>
+      <div class="chat-faqs" id="chatFaqs">
+        <span class="chat-faq-title">Câu hỏi thường gặp:</span>
+        <button type="button" class="chat-faq" data-q="Giá hoa thế nào?">
+          Giá hoa thế nào?
+        </button>
+        <button
+          type="button"
+          class="chat-faq"
+          data-q="Có giao hoa tận nơi không?"
+        >
+          Có giao hoa tận nơi không?
+        </button>
+        <button type="button" class="chat-faq" data-q="Giờ mở cửa của shop?">
+          Giờ mở cửa của shop?
+        </button>
+        <button
+          type="button"
+          class="chat-faq"
+          data-q="Đặt hoa theo yêu cầu thế nào?"
+        >
+          Đặt hoa theo yêu cầu thế nào?
+        </button>
+        <button
+          type="button"
+          class="chat-faq"
+          data-q="Hoa hồng có những màu gì?"
+        >
+          Hoa hồng có những màu gì?
+        </button>
+        <button type="button" class="chat-faq" data-q="Địa chỉ shop ở đâu?">
+          Địa chỉ shop ở đâu?
+        </button>
+      </div>
       <form class="chat-form" id="chatForm">
         <input
           id="chatInput"
@@ -2591,1175 +2506,922 @@
     <div class="toast" id="toast"></div>
 
     <script>
-      function escapeHTML(value) {
-        return String(value).replace(
+      /* ==========================================================
+         DÁN 3 LINK VIDEO VÀO ĐÂY (mỗi link là file .mp4 trực tiếp)
+         Mỗi video sẽ phát đúng 2 giây rồi tự chuyển sang video kế.
+         ========================================================== */
+      const HERO_VIDEOS = [
+        // Video 1 – Flowers field petals bloom
+        "https://cdn.pixabay.com/video/2024/12/29/249475_large.mp4",
+        // Video 2 – Poppy flower violet bloom
+        "https://cdn.pixabay.com/video/2022/06/01/118880-716230870_large.mp4",
+        // Video 3 – Flower gemswurz yellow
+        "https://cdn.pixabay.com/video/2023/11/30/191440-890098909_large.mp4",
+      ];
+      const HERO_VIDEO_DURATION = 2000; // 2 giây mỗi video
+
+      function esc(v) {
+        return String(v ?? "").replace(
           /[&<>"']/g,
-          (char) =>
+          (c) =>
             ({
               "&": "&amp;",
               "<": "&lt;",
               ">": "&gt;",
               '"': "&quot;",
               "'": "&#39;",
-            })[char],
+            })[c],
         );
+      }
+
+      /* ============ BANNER 1: PHÁT 3 VIDEO CỐ ĐỊNH VỊ TRÍ, CHUYỂN CẢNH ÊM ============ */
+      let heroVideoIndex = 0;
+      let heroVideoTimer = null;
+      let heroCleanupTimer = null;
+      let heroActiveSlot = 0;
+
+      function getHeroSlots() {
+        return [
+          document.getElementById("heroVideoA"),
+          document.getElementById("heroVideoB"),
+        ];
+      }
+
+      function prepareVideoSlot(videoEl, url) {
+        if (!videoEl || !url) return;
+        if (videoEl.getAttribute("data-src") !== url) {
+          videoEl.setAttribute("data-src", url);
+          videoEl.src = url;
+          videoEl.muted = true;
+          videoEl.playsInline = true;
+          videoEl.load();
+        }
+      }
+
+      function playHeroVideo(index, isInitial = false) {
+        const slots = getHeroSlots();
+        if (!slots[0] || !slots[1] || !HERO_VIDEOS.length) return;
+
+        heroVideoIndex = index % HERO_VIDEOS.length;
+        const currentUrl = HERO_VIDEOS[heroVideoIndex];
+
+        if (isInitial) {
+          heroActiveSlot = 0;
+          const activeEl = slots[0];
+          const standbyEl = slots[1];
+
+          activeEl.classList.remove("is-prev");
+          activeEl.classList.add("is-active");
+          standbyEl.classList.remove("is-active", "is-prev");
+
+          prepareVideoSlot(activeEl, currentUrl);
+          activeEl.currentTime = 0;
+          activeEl.play().catch(() => {});
+
+          prepareVideoSlot(
+            standbyEl,
+            HERO_VIDEOS[(heroVideoIndex + 1) % HERO_VIDEOS.length],
+          );
+        } else {
+          const prevSlot = heroActiveSlot;
+          const nextSlot = 1 - prevSlot;
+          const prevEl = slots[prevSlot];
+          const nextEl = slots[nextSlot];
+
+          prepareVideoSlot(nextEl, currentUrl);
+          try {
+            if (nextEl.readyState >= 1) nextEl.currentTime = 0;
+          } catch (e) {}
+
+          const revealNext = () => {
+            // Giữ nguyên lớp cũ ở dưới (is-prev), chỉ tăng opacity lớp mới đè lên trên
+            prevEl.classList.remove("is-active");
+            prevEl.classList.add("is-prev");
+            nextEl.classList.remove("is-prev");
+            nextEl.classList.add("is-active");
+
+            clearTimeout(heroCleanupTimer);
+            heroCleanupTimer = setTimeout(() => {
+              prevEl.classList.remove("is-prev");
+              prevEl.pause();
+              prepareVideoSlot(
+                prevEl,
+                HERO_VIDEOS[(heroVideoIndex + 1) % HERO_VIDEOS.length],
+              );
+            }, 900);
+          };
+
+          const playPromise = nextEl.play();
+          if (playPromise && typeof playPromise.then === "function") {
+            playPromise
+              .then(() => requestAnimationFrame(revealNext))
+              .catch(() => requestAnimationFrame(revealNext));
+          } else {
+            requestAnimationFrame(revealNext);
+          }
+
+          heroActiveSlot = nextSlot;
+        }
+
+        clearTimeout(heroVideoTimer);
+        heroVideoTimer = setTimeout(() => {
+          playHeroVideo(heroVideoIndex + 1, false);
+        }, HERO_VIDEO_DURATION);
+      }
+
+      function startHeroVideos() {
+        if (!HERO_VIDEOS.length) return;
+        playHeroVideo(0, true);
+      }
+
+      function stopHeroVideos() {
+        clearTimeout(heroVideoTimer);
+        clearTimeout(heroCleanupTimer);
+        getHeroSlots().forEach((v) => {
+          if (v) v.pause();
+        });
+      }
+
+      /* ============ DATA SẢN PHẨM ============ */
+      const categories = [
+        {
+          name: "Hoa hồng",
+          desc: "Biểu tượng của tình yêu và sự lãng mạn, phù hợp cho mọi dịp đặc biệt.",
+          tag: "Còn hoa",
+          rooms: [
+            [
+              "Hồng Đỏ Tình Yêu",
+              "Bó hồng đỏ lãng mạn, phù hợp cho người thương.",
+              "350.000đ / bó",
+              "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Hồng Trắng Tinh Khôi",
+              "Hồng trắng nhẹ nhàng, tinh tế cho mọi dịp.",
+              "380.000đ / bó",
+              "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Hồng Vàng Rực Rỡ",
+              "Sắc vàng tươi sáng, thay lời chúc may mắn.",
+              "360.000đ / bó",
+              "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Hồng Phấn Dịu Dàng",
+              "Sắc hồng ngọt ngào, món quà tinh tế.",
+              "390.000đ / bó",
+              "https://images.unsplash.com/photo-1495231916356-a86217efff12?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Hồng Kem Mộng Mơ",
+              "Tông màu nhẹ nhàng, tạo cảm giác thư thái.",
+              "370.000đ / bó",
+              "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Hồng Đơn Bình Yên",
+              "Một bông hồng nhỏ để gửi gắm yêu thương.",
+              "150.000đ / bông",
+              "https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Hồng Vintage",
+              "Điểm nhấn hoài cổ và gần gũi.",
+              "400.000đ / bó",
+              "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Hồng Ban Mai",
+              "Bó hoa sáng thoáng với đầy đủ phụ kiện.",
+              "390.000đ / bó",
+              "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=82",
+            ],
+          ],
+        },
+        {
+          name: "Hoa cẩm chướng",
+          desc: "Vẻ đẹp dịu dàng, tượng trưng cho tình cảm gia đình và sự ngưỡng mộ.",
+          tag: "Còn hoa",
+          rooms: [
+            [
+              "Cẩm Chướng Lãng Mạn",
+              "Sắc hoa nhẹ nhàng cho những ngày thật dịu dàng.",
+              "250.000đ / bó",
+              "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Cẩm Chướng Hồng Phấn",
+              "Thiết kế gần gũi, tạo cảm giác ấm áp như ở nhà.",
+              "280.000đ / bó",
+              "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Cẩm Chướng Mộng Mơ",
+              "Tông màu dịu nhẹ và góc nghỉ ngơi thoải mái.",
+              "300.000đ / bó",
+              "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Cẩm Chướng Trắng Ngà",
+              "Phù hợp cho lời chúc mừng và sự kính trọng.",
+              "320.000đ / bó",
+              "https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Cẩm Chướng Hoàng Hôn",
+              "Sắc hoa thư giãn với cách bài trí tinh tế.",
+              "290.000đ / bó",
+              "https://images.unsplash.com/photo-1495231916356-a86217efff12?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Cẩm Chướng Cỏ May",
+              "Bó hoa thoáng đãng, tiện nghi và riêng tư.",
+              "270.000đ / bó",
+              "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Cẩm Chướng Gió",
+              "Thiết kế tối giản, phù hợp làm quà tặng.",
+              "310.000đ / bó",
+              "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Cẩm Chướng Đồi Thông",
+              "Một lựa chọn dễ chịu cho mọi dịp.",
+              "330.000đ / bó",
+              "https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=700&q=82",
+            ],
+          ],
+        },
+        {
+          name: "Hoa hướng dương",
+          desc: "Biểu tượng của sự lạc quan, niềm tin và hy vọng.",
+          tag: "Còn hoa",
+          rooms: [
+            [
+              "Hướng Dương Rực Rỡ",
+              "Bó hoa rộng với cách bài trí ấm cúng.",
+              "450.000đ / bó",
+              "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Hướng Dương An Nhiên",
+              "Bó hoa thoáng đãng, phù hợp nhóm nhỏ.",
+              "420.000đ / bó",
+              "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Hướng Dương Vườn Nhỏ",
+              "Thiết kế thân thiện, tạo cảm giác gần gũi.",
+              "480.000đ / bó",
+              "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Hướng Dương Đà Lạt",
+              "Không gian sinh hoạt tiện lợi cho kỳ nghỉ gia đình.",
+              "500.000đ / bó",
+              "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Hướng Dương Ấm Áp",
+              "Nhiều không gian nghỉ ngơi cho các thành viên.",
+              "550.000đ / bó",
+              "https://images.unsplash.com/photo-1495231916356-a86217efff12?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Hướng Dương Mộc Miên",
+              "Tông gỗ nhẹ nhàng cùng nội thất tiện nghi.",
+              "490.000đ / bó",
+              "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Hướng Dương Ban Công",
+              "Bó hoa rộng rãi dành cho nhóm bạn thân.",
+              "510.000đ / bó",
+              "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Hướng Dương Bình Minh",
+              "Lựa chọn thoải mái cho chuyến đi nhiều kỷ niệm.",
+              "580.000đ / bó",
+              "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=82",
+            ],
+          ],
+        },
+        {
+          name: "Hoa lan",
+          desc: "Biểu tượng của sự sang trọng, quý phái và bền lâu.",
+          tag: "Còn hoa",
+          rooms: [
+            [
+              "Lan Hồ Điệp Trắng",
+              "Chậu lan thanh lịch, phù hợp cho dịp trang trọng.",
+              "700.000đ / chậu",
+              "https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Lan Hồ Điệp Hồng",
+              "Sắc hồng ngọt ngào, món quà sang trọng.",
+              "750.000đ / chậu",
+              "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Lan Mây Trắng",
+              "Đón nắng sớm và tận hưởng nhịp sống chậm.",
+              "780.000đ / chậu",
+              "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Lan Hoàng Hôn",
+              "Một góc nhỏ ngắm thành phố lúc chiều buông.",
+              "800.000đ / chậu",
+              "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Lan Gió",
+              "Thiết kế thoáng đãng, gần gũi với thiên nhiên.",
+              "760.000đ / chậu",
+              "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Lan Hoa",
+              "Không gian nhẹ nhàng cho kỳ nghỉ thư thái.",
+              "820.000đ / chậu",
+              "https://images.unsplash.com/photo-1495231916356-a86217efff12?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Lan Bình Yên",
+              "Tận hưởng khoảng riêng giữa thành phố ngàn hoa.",
+              "790.000đ / chậu",
+              "https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=700&q=82",
+            ],
+            [
+              "Lan Đồi Xa",
+              "Góc nghỉ dưỡng thoáng sáng cho hai người.",
+              "850.000đ / chậu",
+              "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=82",
+            ],
+          ],
+        },
+      ];
+
+      const customBlockHTML = `
+        <div class="custom-grid" id="customGrid">
+          <div class="custom-card" data-need="Hoa tặng người yêu" onclick="selectNeed(this)">
+            <div class="custom-icon">♡</div>
+            <h3>Hoa tặng người yêu</h3>
+            <p>Lãng mạn, ngọt ngào, phù hợp cho tình cảm đôi lứa.</p>
+          </div>
+          <div class="custom-card" data-need="Hoa khai trương" onclick="selectNeed(this)">
+            <div class="custom-icon">✦</div>
+            <h3>Hoa khai trương</h3>
+            <p>Rực rỡ, sang trọng, chúc may mắn và thịnh vượng.</p>
+          </div>
+          <div class="custom-card" data-need="Hoa sinh nhật" onclick="selectNeed(this)">
+            <div class="custom-icon">✿</div>
+            <h3>Hoa sinh nhật</h3>
+            <p>Tươi vui, nhiều màu sắc, gửi lời chúc mừng ý nghĩa.</p>
+          </div>
+          <div class="custom-card" data-need="Hoa trang trí để bàn" onclick="selectNeed(this)">
+            <div class="custom-icon">❀</div>
+            <h3>Hoa trang trí để bàn</h3>
+            <p>Nhỏ xinh, tinh tế, làm đẹp không gian sống.</p>
+          </div>
+        </div>
+        <form class="custom-form" id="customForm">
+          <h3>Gửi yêu cầu chi tiết</h3>
+          <p>Cho chúng tôi biết bạn muốn bó hoa như thế nào – chúng tôi sẽ liên hệ tư vấn.</p>
+          <div class="selected-label" id="selectedLabel">Bạn chưa chọn mục đích tặng hoa.</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="customName">Họ và tên</label>
+              <input id="customName" required placeholder="Nhập họ tên của bạn" />
+            </div>
+            <div class="form-group">
+              <label for="customPhone">Số điện thoại</label>
+              <input id="customPhone" required type="tel" placeholder="Nhập số điện thoại" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="customAddress">Địa chỉ giao hoa</label>
+            <input id="customAddress" required placeholder="Nhập địa chỉ nhận hoa" />
+          </div>
+          <div class="form-group">
+            <label for="customDate">Ngày giao hoa</label>
+            <input id="customDate" type="date" required />
+          </div>
+          <div class="form-group">
+            <label for="customDetail">Yêu cầu chi tiết</label>
+            <textarea id="customDetail" required placeholder="Ví dụ: bó hồng đỏ 50 bông, gói giấy hồng, thêm thiệp chúc mừng..."></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Gửi yêu cầu đến shop</button>
+        </form>`;
+
+      function roomCard(room, catName) {
+        const [name, desc, price, img] = room;
+        return `
+          <article class="room-card">
+            <div class="room-image">
+              <img src="${esc(img)}" alt="${esc(name)}" loading="lazy" />
+              <span class="room-tag">Còn hoa</span>
+            </div>
+            <div class="room-info">
+              <h3>${esc(name)}</h3>
+              <p>${esc(desc)}</p>
+              <div class="room-meta">
+                <span>${esc(catName)}</span>
+                <span class="room-price">${esc(price)}</span>
+              </div>
+              <div class="room-actions">
+                <button class="btn btn-primary" onclick="openBooking('${esc(name)}')">Đặt hoa</button>
+              </div>
+            </div>
+          </article>`;
+      }
+
+      function renderFeatured() {
+        const picks = [
+          categories[0].rooms[0],
+          categories[1].rooms[2],
+          categories[2].rooms[0],
+          categories[3].rooms[1],
+        ];
+        document.getElementById("featuredRooms").innerHTML = picks
+          .map((r, i) => roomCard(r, categories[i].name))
+          .join("");
+      }
+
+      function categoryBlockHome(cat, idx) {
+        return `
+          <div class="category-block" id="home-cat-${idx}">
+            <div class="category-head">
+              <div>
+                <h2>${esc(cat.name)}</h2>
+                <p>${esc(cat.desc)}</p>
+              </div>
+            </div>
+            <div class="room-grid">
+              ${cat.rooms.map((r) => roomCard(r, cat.name)).join("")}
+            </div>
+            <div class="category-actions">
+              <button class="view-more" onclick="goToCategory(${idx})">Xem thêm</button>
+            </div>
+          </div>`;
+      }
+
+      function categoryBlockServices(cat, idx) {
+        return `
+          <div class="category-block" id="cat-${idx}">
+            <div class="category-head">
+              <div>
+                <h2>${esc(cat.name)}</h2>
+                <p>${esc(cat.desc)}</p>
+              </div>
+            </div>
+            <div class="room-grid">
+              ${cat.rooms.map((r) => roomCard(r, cat.name)).join("")}
+            </div>
+            <div class="category-actions">
+              <button class="view-more" id="viewMore-${idx}" onclick="toggleCategory(${idx})">Xem thêm</button>
+            </div>
+          </div>`;
+      }
+
+      function renderCategories() {
+        document.getElementById("homeCategories").innerHTML = categories
+          .map((c, i) => categoryBlockHome(c, i))
+          .join("");
+        document.getElementById("serviceCategories").innerHTML = categories
+          .map((c, i) => categoryBlockServices(c, i))
+          .join("");
+      }
+
+      function goToCategory(idx) {
+        showPage("services");
+        setTimeout(() => {
+          const block = document.getElementById("cat-" + idx);
+          if (!block) return;
+          if (!block.classList.contains("expanded")) {
+            block.classList.add("expanded");
+            const btn = block.querySelector(".view-more");
+            if (btn) btn.innerHTML = "Thu gọn";
+          }
+          block.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 260);
+      }
+
+      function toggleCategory(idx) {
+        const block = document.getElementById("cat-" + idx);
+        if (!block) return;
+        block.classList.toggle("expanded");
+        const expanded = block.classList.contains("expanded");
+        const btn = block.querySelector(".view-more");
+        if (btn) {
+          btn.innerHTML = expanded ? "Thu gọn" : "Xem thêm";
+        }
+      }
+
+      const pageMap = {
+        home: "homePage",
+        services: "servicesPage",
+        about: "aboutPage",
+        contact: "contactPage",
+        mybookings: "mybookingsPage",
+      };
+
+      function showPage(name) {
+        document
+          .querySelectorAll(".page")
+          .forEach((p) => p.classList.remove("active"));
+        const target = document.getElementById(pageMap[name] || "homePage");
+        if (target) target.classList.add("active");
+        document.querySelectorAll(".nav-link").forEach((l) => {
+          l.classList.toggle("active", l.dataset.page === name);
+        });
+        document.getElementById("mainNav").classList.remove("open");
+        moveIndicator();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (name === "mybookings") renderMyBookings();
+        if (name === "home") {
+          startHeroVideos();
+        } else {
+          stopHeroVideos();
+        }
+      }
+
+      function moveIndicator() {
+        const nav = document.getElementById("mainNav");
+        const indicator = document.getElementById("navIndicator");
+        const active = nav.querySelector(".nav-link.active");
+        if (!active) return;
+        const navRect = nav.getBoundingClientRect();
+        const rect = active.getBoundingClientRect();
+        indicator.style.left = rect.left - navRect.left + "px";
+        indicator.style.width = rect.width + "px";
+        indicator.classList.add("ready");
+      }
+      window.addEventListener("load", moveIndicator);
+      window.addEventListener("resize", moveIndicator);
+
+      document.querySelectorAll(".nav-link").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          showPage(link.dataset.page);
+        });
+      });
+
+      const layers = document.querySelectorAll(".hero-layer");
+      const dots = document.querySelectorAll(".hero-dot");
+      let current = 0;
+      let timer;
+
+      function goTo(i) {
+        layers[current].classList.remove("active");
+        layers[current].classList.add("leaving");
+        const old = current;
+        setTimeout(() => layers[old].classList.remove("leaving"), 1000);
+        current = (i + layers.length) % layers.length;
+        layers[current].classList.add("active");
+        dots.forEach((d, k) => d.classList.toggle("active", k === current));
+        if (current === 0) {
+          startHeroVideos();
+        } else {
+          stopHeroVideos();
+        }
+      }
+      function nextSlide() {
+        goTo(current + 1);
+      }
+      function prevSlide() {
+        goTo(current - 1);
+      }
+      function startAuto() {
+        clearInterval(timer);
+        timer = setInterval(nextSlide, 6000);
+      }
+      document.getElementById("heroNext").addEventListener("click", () => {
+        nextSlide();
+        startAuto();
+      });
+      document.getElementById("heroPrev").addEventListener("click", () => {
+        prevSlide();
+        startAuto();
+      });
+      dots.forEach((d, i) =>
+        d.addEventListener("click", () => {
+          goTo(i);
+          startAuto();
+        }),
+      );
+      startAuto();
+
+      (function createPetals() {
+        const layer = document.getElementById("petalLayer");
+        if (!layer) return;
+        const count = 30;
+        for (let i = 0; i < count; i++) {
+          const p = document.createElement("span");
+          p.className = "petal";
+          const size = 12 + Math.random() * 16;
+          p.style.width = size + "px";
+          p.style.height = size + "px";
+          p.style.left = Math.random() * 100 + "%";
+          p.style.opacity = 0.6 + Math.random() * 0.4;
+          p.style.animationDuration = 7 + Math.random() * 9 + "s";
+          p.style.animationDelay = -Math.random() * 12 + "s";
+          layer.appendChild(p);
+        }
+      })();
+
+      const searchPanel = document.getElementById("searchPanel");
+      document.getElementById("searchToggle").addEventListener("click", () => {
+        searchPanel.classList.toggle("hidden");
+      });
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", function () {
+          const q = this.value.trim().toLowerCase();
+          const box = document.getElementById("searchResults");
+          if (!q) {
+            box.textContent = "Nhập từ khóa để tìm hoa phù hợp.";
+            return;
+          }
+          const matches = categories.flatMap((cat) =>
+            cat.rooms
+              .filter((r) =>
+                (r.join(" ") + " " + cat.name).toLowerCase().includes(q),
+              )
+              .map((r) => ({ r, cat })),
+          );
+          box.innerHTML = matches.length
+            ? matches
+                .slice(0, 10)
+                .map(
+                  ({ r, cat }) => `
+<a class="search-result" href="#" onclick="showPage('services'); return false;">
+<strong>${esc(r[0])}</strong><br>${esc(cat.name)} · ${esc(r[2])}
+</a>`,
+                )
+                .join("")
+            : "Không tìm thấy hoa phù hợp.";
+        });
+
+      document.getElementById("menuToggle").addEventListener("click", () => {
+        document.getElementById("mainNav").classList.toggle("open");
+      });
+
+      const bookingBackdrop = document.getElementById("bookingBackdrop");
+      const bookingForm = document.getElementById("bookingForm");
+
+      function findProduct(name) {
+        for (const cat of categories) {
+          const found = cat.rooms.find((r) => r[0] === name);
+          if (found) return found;
+        }
+        return null;
+      }
+
+      function openBooking(roomName) {
+        const product = findProduct(roomName);
+        document.getElementById("bookingRoom").value = roomName;
+        document.getElementById("bookingPreviewName").textContent = roomName;
+        document.getElementById("bookingImage").src = product ? product[3] : "";
+        document.getElementById("bookingImage").alt = "Ảnh " + roomName;
+        document.getElementById("bookingPreviewPrice").textContent = product
+          ? product[2]
+          : "";
+        bookingBackdrop.classList.add("show");
+      }
+
+      document.getElementById("closeBooking").addEventListener("click", () => {
+        bookingBackdrop.classList.remove("show");
+      });
+      bookingBackdrop.addEventListener("click", (e) => {
+        if (e.target === bookingBackdrop)
+          bookingBackdrop.classList.remove("show");
+      });
+
+      bookingForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const product = findProduct(
+          document.getElementById("bookingRoom").value,
+        );
+        const data = {
+          id: "DH" + Date.now(),
+          type: "product",
+          room: document.getElementById("bookingRoom").value,
+          name: document.getElementById("guestName").value.trim(),
+          phone: document.getElementById("guestPhone").value.trim(),
+          address: document.getElementById("guestAddress").value.trim(),
+          checkout: document.getElementById("checkout").value,
+          note: document.getElementById("guestNote").value.trim(),
+          image: product ? product[3] : "",
+        };
+        const list = JSON.parse(localStorage.getItem("myBookings") || "[]");
+        list.push(data);
+        localStorage.setItem("myBookings", JSON.stringify(list));
+        bookingForm.reset();
+        bookingBackdrop.classList.remove("show");
+        showToast("Đặt hoa thành công! Chúng tôi sẽ liên hệ với bạn.");
+        renderMyBookings();
+      });
+
+      let selectedNeed = "";
+
+      function selectNeed(el) {
+        document
+          .querySelectorAll(".custom-card")
+          .forEach((c) => c.classList.remove("selected"));
+        el.classList.add("selected");
+        selectedNeed = el.dataset.need;
+        const label = el.closest(".container")?.querySelector("#selectedLabel");
+        if (label) label.textContent = "Bạn đã chọn: " + selectedNeed;
+      }
+
+      function bindCustomForm() {
+        const forms = document.querySelectorAll("#customForm");
+        forms.forEach((form) => {
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            if (!selectedNeed) {
+              showToast("Vui lòng chọn mục đích tặng hoa trước.");
+              return;
+            }
+            const block = form.closest(".container");
+            const data = {
+              id: "YC" + Date.now(),
+              type: "custom",
+              need: selectedNeed,
+              name: block.querySelector("#customName").value.trim(),
+              phone: block.querySelector("#customPhone").value.trim(),
+              address: block.querySelector("#customAddress").value.trim(),
+              detail: block.querySelector("#customDetail").value.trim(),
+            };
+            const list = JSON.parse(localStorage.getItem("myBookings") || "[]");
+            list.push(data);
+            localStorage.setItem("myBookings", JSON.stringify(list));
+            form.reset();
+            block
+              .querySelectorAll(".custom-card")
+              .forEach((c) => c.classList.remove("selected"));
+            selectedNeed = "";
+            block.querySelector("#selectedLabel").textContent =
+              "Bạn chưa chọn mục đích tặng hoa.";
+            showToast(
+              "Đã gửi yêu cầu đặt hoa theo yêu cầu! Shop sẽ liên hệ với bạn.",
+            );
+            renderMyBookings();
+          });
+        });
+      }
+
+      function cancelBooking(id) {
+        if (!confirm("Bạn có chắc muốn hủy đơn hàng này?")) return;
+        let list = JSON.parse(localStorage.getItem("myBookings") || "[]");
+        list = list.filter((b) => b.id !== id);
+        localStorage.setItem("myBookings", JSON.stringify(list));
+        renderMyBookings();
+        showToast("Đã hủy đơn hàng.");
       }
 
       function renderMyBookings() {
         const container = document.getElementById("myBookingsList");
+        if (!container) return;
         const bookings = JSON.parse(localStorage.getItem("myBookings") || "[]");
-
         if (!bookings.length) {
-          container.innerHTML = `
-      <p class="section-intro">
-        Bạn chưa có thông tin đặt phòng nào trên thiết bị này.
-      </p>`;
+          container.innerHTML = `<p class="section-intro">Bạn chưa có đơn hoa nào trên thiết bị này.</p>`;
           return;
         }
-        const esc = (v) =>
-          String(v ?? "").replace(
-            /[&<>"']/g,
-            (c) =>
-              ({
-                "&": "&amp;",
-                "<": "&lt;",
-                ">": "&gt;",
-                '"': "&quot;",
-                "'": "&#39;",
-              })[c],
-          );
-        const allRooms = categories.flatMap((category) => category.rooms);
-
         container.innerHTML = bookings
-          .map((booking) => {
-            const found = allRooms.find((r) => r[0] === booking.room);
-            const img = booking.image || (found ? found[3] : "");
-            return `
-    <article class="my-booking-card">
-      <div class="my-booking-info">
-        <h3>${esc(booking.room)}</h3>
-        <p>Ngày nhận: ${esc(booking.checkin)}</p>
-        <p>Ngày trả: ${esc(booking.checkout)}</p>
-        <p>Người đặt: ${esc(booking.name)}</p>
-        <p>Điện thoại: ${esc(booking.phone)}</p>
-        <p>Ghi chú: ${esc(booking.note)}</p>
-        <div class="my-booking-actions">
-          <button class="btn btn-cancel" onclick="cancelBooking('${esc(booking.id)}')">
-            Hủy đặt phòng
-          </button>
-          <span class="my-booking-note">*chúng tôi sẽ liên hệ với bạn để hoàn tất đặt phòng trong giây lát*</span>
-        </div>
-      </div>
-      ${img ? `<img class="my-booking-image" src="${esc(img)}" alt="Ảnh ${esc(booking.room)}">` : ""}
-    </article>`;
-          })
-          .join("");
-      }
-
-      const categories = [
-        {
-          name: "Phòng đơn",
-          desc: "Riêng tư, gọn gàng – phù hợp cho chuyến đi một mình hoặc nghỉ ngơi ngắn ngày.",
-          tag: "Còn phòng",
-          rooms: [
-            [
-              "Phòng đơn Gỗ Mộc",
-              "Không gian ấm cúng với nội thất gỗ, phù hợp cho một người.",
-              "350.000đ / đêm",
-              "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Phòng đơn Sương Mai",
-              "Căn phòng nhỏ xinh, đón ánh sáng tự nhiên mỗi sớm.",
-              "380.000đ / đêm",
-              "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Phòng đơn Thông Xanh",
-              "Góc nghỉ ngơi yên tĩnh dành cho người thích sự riêng tư.",
-              "360.000đ / đêm",
-              "https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Phòng đơn Nắng",
-              "Thiết kế tối giản, tiện nghi cho kỳ nghỉ thoải mái.",
-              "390.000đ / đêm",
-              "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Phòng đơn Mây",
-              "Tông màu nhẹ nhàng, tạo cảm giác thư thái.",
-              "370.000đ / đêm",
-              "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Phòng đơn Bình Yên",
-              "Một góc nhỏ để nghỉ ngơi sau ngày dài khám phá.",
-              "350.000đ / đêm",
-              "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Phòng đơn Vintage",
-              "Điểm nhấn trang trí hoài cổ và gần gũi.",
-              "400.000đ / đêm",
-              "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Phòng đơn Ban Mai",
-              "Căn phòng sáng thoáng với đầy đủ tiện nghi cơ bản.",
-              "390.000đ / đêm",
-              "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=82",
-            ],
-          ],
-        },
-        {
-          name: "Phòng đôi",
-          desc: "Không gian dành cho hai người, thích hợp cho cặp đôi hoặc bạn bè.",
-          tag: "Còn phòng",
-          rooms: [
-            [
-              "Phòng đôi Lãng Mạn",
-              "Không gian riêng tư cho những ngày nghỉ thật nhẹ nhàng.",
-              "550.000đ / đêm",
-              "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Phòng đôi Gác Mái",
-              "Thiết kế gần gũi, tạo cảm giác ấm áp như ở nhà.",
-              "580.000đ / đêm",
-              "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Phòng đôi Mộng Mơ",
-              "Tông màu dịu nhẹ và góc nghỉ ngơi thoải mái.",
-              "600.000đ / đêm",
-              "https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Phòng đôi Thông Reo",
-              "Phù hợp cho chuyến đi nghỉ dưỡng của hai người.",
-              "620.000đ / đêm",
-              "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Phòng đôi Hoàng Hôn",
-              "Không gian thư giãn với cách bài trí tinh tế.",
-              "590.000đ / đêm",
-              "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Phòng đôi Cỏ May",
-              "Căn phòng thoáng đãng, tiện nghi và riêng tư.",
-              "570.000đ / đêm",
-              "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Phòng đôi Gió",
-              "Thiết kế tối giản, phù hợp kỳ nghỉ cuối tuần.",
-              "610.000đ / đêm",
-              "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Phòng đôi Đồi Thông",
-              "Một lựa chọn dễ chịu cho hành trình khám phá phố núi.",
-              "630.000đ / đêm",
-              "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=82",
-            ],
-          ],
-        },
-        {
-          name: "Phòng gia đình",
-          desc: "Diện tích rộng rãi, phù hợp cho gia đình hoặc nhóm bạn nhỏ.",
-          tag: "Còn phòng",
-          rooms: [
-            [
-              "Family Nhà Gỗ",
-              "Không gian rộng với cách bài trí ấm cúng cho cả nhà.",
-              "900.000đ / đêm",
-              "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Family An Nhiên",
-              "Phòng nghỉ thoáng đãng, phù hợp nhóm nhỏ.",
-              "950.000đ / đêm",
-              "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Family Vườn Nhỏ",
-              "Thiết kế thân thiện, tạo cảm giác gần gũi.",
-              "980.000đ / đêm",
-              "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Family Đà Lạt",
-              "Không gian sinh hoạt tiện lợi cho kỳ nghỉ gia đình.",
-              "1.000.000đ / đêm",
-              "https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Family Ấm Áp",
-              "Nhiều không gian nghỉ ngơi cho các thành viên.",
-              "1.050.000đ / đêm",
-              "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Family Mộc Miên",
-              "Tông gỗ nhẹ nhàng cùng nội thất tiện nghi.",
-              "990.000đ / đêm",
-              "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Family Ban Công",
-              "Căn phòng rộng rãi dành cho nhóm bạn thân.",
-              "1.100.000đ / đêm",
-              "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Family Bình Minh",
-              "Lựa chọn thoải mái cho chuyến đi nhiều kỷ niệm.",
-              "1.080.000đ / đêm",
-              "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=82",
-            ],
-          ],
-        },
-        {
-          name: "Phòng ban công",
-          desc: "Tận hưởng không khí phố núi và những khoảnh khắc thư giãn bên ban công.",
-          tag: "Còn phòng",
-          rooms: [
-            [
-              "Ban Công Sương",
-              "Góc ban công để nhâm nhi cà phê và ngắm phố.",
-              "700.000đ / đêm",
-              "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Ban Công Thông",
-              "Không gian mở dành cho người yêu thiên nhiên.",
-              "750.000đ / đêm",
-              "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Ban Công Mây Trắng",
-              "Đón nắng sớm và tận hưởng nhịp sống chậm.",
-              "780.000đ / đêm",
-              "https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Ban Công Hoàng Hôn",
-              "Một góc nhỏ ngắm thành phố lúc chiều buông.",
-              "800.000đ / đêm",
-              "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Ban Công Gió",
-              "Thiết kế thoáng đãng, gần gũi với thiên nhiên.",
-              "760.000đ / đêm",
-              "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Ban Công Hoa",
-              "Không gian nhẹ nhàng cho kỳ nghỉ thư thái.",
-              "820.000đ / đêm",
-              "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Ban Công Bình Yên",
-              "Tận hưởng khoảng riêng giữa thành phố ngàn hoa.",
-              "790.000đ / đêm",
-              "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=82",
-            ],
-            [
-              "Ban Công Đồi Xa",
-              "Góc nghỉ dưỡng thoáng sáng cho hai người.",
-              "850.000đ / đêm",
-              "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=700&q=82",
-            ],
-          ],
-        },
-      ];
-      const searchInput = document.getElementById("searchInput");
-      const searchResults = document.getElementById("searchResults");
-
-      searchInput.addEventListener("input", () => {
-        const q = searchInput.value.trim().toLowerCase();
-
-        if (!q) {
-          searchResults.textContent = "Nhập từ khóa để tìm phòng phù hợp.";
-          return;
-        }
-
-        const matches = categories.flatMap((cat) =>
-          cat.rooms
-            .filter((room) =>
-              (room.join(" ") + " " + cat.name).toLowerCase().includes(q),
-            )
-            .map((room) => ({ room, cat })),
-        );
-
-        searchResults.innerHTML = matches.length
-          ? matches
-              .slice(0, 10)
-              .map(
-                ({ room, cat }) => `
-        <a class="search-result" href="#"
-          onclick="showPage('services'); return false">
-          <strong>${room[0]}</strong><br>${cat.name} · ${room[2]}
-        </a>
-      `,
-              )
-              .join("")
-          : "Không tìm thấy phòng phù hợp.";
-      });
-
-      const guides = [
-        {
-          title: "Đà Lạt mùa nào đẹp để ghé thăm?",
-          desc: "Mỗi mùa Đà Lạt mang một vẻ đẹp riêng. Cùng tìm hiểu thời điểm phù hợp cho chuyến đi.",
-          img: "https://cdn.pixabay.com/photo/2023/01/23/02/33/peach-blossoms-7737703_1280.jpg",
-          body: `Đà Lạt nằm trên cao nguyên Lâm Viên, ở độ cao hơn 1.500 m so với mực nước biển, nên khí hậu mát mẻ gần như quanh năm. Mỗi mùa mang một vẻ đẹp riêng, vì vậy mùa nào đẹp nhất còn tùy vào điều bạn muốn tìm kiếm trong chuyến đi.
-
-## Mùa khô (khoảng tháng 11 đến tháng 4)
-
-Đây thường là thời điểm đông khách nhất vì trời nắng nhẹ, ít mưa, rất hợp để đi dạo, chụp ảnh và tham quan ngoài trời. Vào cuối năm, các triền đồi thường nở dã quỳ vàng rực. Đầu năm là mùa mai anh đào với sắc hồng nhạt dọc những con đường trong thành phố. Buổi sáng sớm và buổi tối khá lạnh, bạn nên mang theo áo ấm dù ban ngày có nắng.
-
-## Mùa mưa (khoảng tháng 5 đến tháng 10)
-
-Mưa thường đến vào buổi chiều rồi tạnh, khiến thành phố xanh mướt và không khí trong lành hơn. Đây là khoảng thời gian vắng khách hơn, giá phòng thường dễ chịu hơn, thích hợp cho những ai thích ngồi quán cà phê, nghỉ ngơi ở homestay và có những buổi chiều thật chậm. Bạn nên mang ô hoặc áo mưa mỏng và chú ý đường trơn khi đi đồi núi.
-
-## Chọn thời điểm theo sở thích
-
-- Thích săn hoa và chụp ảnh: cuối năm đến đầu năm.
-- Muốn yên tĩnh, ít đông đúc: chọn các ngày trong tuần, tránh dịp lễ và Tết.
-- Thích sương sớm và săn mây: những buổi sáng sớm mùa khô ở các đồi cao.
-- Thích không khí xanh mát, thư giãn: mùa mưa, khi cây cối tươi tốt nhất.
-
-## Lưu ý trước khi đi
-
-Dù đi vào mùa nào, bạn hãy kiểm tra dự báo thời tiết trước chuyến đi, đặt phòng sớm vào các dịp lễ và dành thêm thời gian nghỉ ngơi giữa lịch trình. Phố núi đẹp nhất khi bạn không phải vội, hãy để mình đi chậm lại và tận hưởng.`,
-        },
-        {
-          title: "Gợi ý hành lý cho chuyến đi Đà Lạt",
-          desc: "Một vài món đồ cần thiết giúp hành trình của bạn thoải mái và chủ động hơn.",
-          img: "https://i.pinimg.com/736x/47/2f/57/472f57c7d6ffc0e4010191e4d543e42b.jpg",
-          body: `Thời tiết Đà Lạt thay đổi khá nhiều trong ngày: sáng sớm se lạnh, trưa có thể nắng, chiều tối lại mát và có sương. Chuẩn bị hành lý gọn nhẹ nhưng đủ lớp áo sẽ giúp bạn thoải mái hơn trong suốt chuyến đi.
-
-## Trang phục
-
-- Áo khoác ấm hoặc áo gió, vì buổi sáng sớm và buổi tối thường lạnh.
-- Vài lớp áo mỏng để dễ mặc thêm hoặc cởi bớt trong ngày.
-- Quần dài thoải mái và giày đi bộ có độ bám tốt cho những con dốc.
-- Khăn choàng, mũ len hoặc găng tay nếu bạn dễ bị lạnh.
-- Mũ hoặc kính râm cho những buổi trưa nắng.
-
-## Đồ dùng cá nhân
-
-- Kem chống nắng, kem dưỡng ẩm và son dưỡng môi vì không khí cao nguyên có thể hơi khô.
-- Ô hoặc áo mưa mỏng, đặc biệt trong mùa mưa.
-- Bình nước, sạc dự phòng và cáp sạc.
-- Thuốc cá nhân thông thường và thuốc say xe nếu bạn dễ say khi đi đường đèo.
-- Giấy tờ tùy thân và các thông tin đặt phòng.
-
-## Đồ dành cho từng hoạt động
-
-- Nếu thích chụp ảnh: máy ảnh hoặc điện thoại đầy pin, thẻ nhớ còn trống.
-- Nếu đi dạo chợ đêm hoặc quán cà phê: một chiếc túi nhỏ gọn đựng đồ cá nhân.
-- Nếu đi picnic hoặc dã ngoại: khăn trải, túi đựng rác và đồ ăn nhẹ.
-
-## Mẹo sắp xếp
-
-Hãy ưu tiên vali nhỏ hoặc balo gọn nhẹ để dễ di chuyển giữa các điểm đến. Bạn nên chừa một khoảng trống trong hành lý cho đặc sản và quà mang về. Nếu quên món gì, trung tâm thành phố có nhiều cửa hàng bán áo ấm, ô và các vật dụng cần thiết.`,
-        },
-        {
-          title: "Kinh nghiệm khám phá Đà Lạt",
-          desc: "Lên lịch trình hợp lý để không bỏ lỡ những trải nghiệm thú vị tại phố núi.",
-          img: "https://i.pinimg.com/1200x/d3/c8/6d/d3c86d986a2f9da74a92169e74e78fc4.jpg",
-          body: `Đà Lạt có nhiều điểm đến nằm rải rác quanh thành phố, vì vậy một lịch trình hợp lý sẽ giúp bạn tiết kiệm thời gian di chuyển và có thêm những khoảnh khắc thư thả.
-
-## Chia lịch trình theo khu vực
-
-Bạn nên gom các điểm gần nhau vào cùng một buổi. Khu trung tâm thường có hồ Xuân Hương, quảng trường Lâm Viên, chợ Đà Lạt và nhiều quán cà phê, nhà hàng. Những điểm ở xa hơn như các đồi chè, thác nước hay khu rừng thông thường mất nhiều thời gian di chuyển hơn, nên dành riêng một buổi hoặc một ngày cho mỗi hướng.
-
-## Gợi ý một ngày khám phá
-
-- Buổi sáng: dậy sớm, ghé quán cà phê hoặc điểm tham quan ngoài trời khi trời còn mát.
-- Buổi trưa: ăn trưa và nghỉ ngơi một chút, tránh dồn quá nhiều điểm đến.
-- Buổi chiều: ghé các khu vườn, đồi hoặc điểm ngắm hoàng hôn.
-- Buổi tối: dạo chợ đêm, thưởng thức ẩm thực địa phương và các món nóng cho ngày se lạnh.
-
-## Di chuyển
-
-Bạn có thể thuê xe máy, gọi xe hoặc đi taxi tùy nhu cầu. Đường ở Đà Lạt có nhiều dốc và đèo, đôi khi có sương mù nên hãy đi chậm, giữ khoảng cách an toàn và không lái xe khi quá mệt. Nếu chưa quen đường đèo, bạn nên chọn phương tiện có người lái.
-
-## Những lưu ý hữu ích
-
-- Hỏi trước giờ hoạt động và giá vé của từng địa điểm để không bị mất công đi lại.
-- Mang theo một ít tiền mặt cho những nơi chưa hỗ trợ thanh toán điện tử.
-- Giữ gìn vệ sinh, không xả rác và tôn trọng cảnh quan, cư dân địa phương.
-- Mua đặc sản ở những cửa hàng uy tín và hỏi kỹ giá trước khi mua.
-
-Quan trọng nhất là chừa thời gian nghỉ giữa các điểm đến. Đà Lạt đẹp nhất khi bạn đi chậm và dành thời gian cảm nhận từng khoảnh khắc.`,
-        },
-      ];
-
-      const explorations = [
-        {
-          title: "Hồ Xuân Hương",
-          desc: "Biểu tượng thơ mộng giữa trung tâm thành phố Đà Lạt.",
-          img: "https://i.pinimg.com/1200x/74/d0/73/74d073eb03adb397116cbef9692f88d2.jpg",
-          body: `Hồ Xuân Hương nằm ngay giữa trung tâm Đà Lạt, là một trong những biểu tượng quen thuộc nhất của thành phố. Đây là hồ nhân tạo có hình dáng uốn cong như vầng trăng khuyết, mang tên nữ thi sĩ Hồ Xuân Hương. Chu vi mặt hồ khoảng 5 km nên bạn có thể đi bộ hoặc đạp xe quanh hồ một cách thong thả.
-
-## Những điều nên làm bên hồ
-
-- Đi dạo hoặc đạp xe quanh hồ, vừa ngắm cảnh vừa cảm nhận nhịp sống chậm của phố núi.
-- Đạp vịt hoặc thuê thuyền trên hồ nếu thời tiết đẹp.
-- Ngồi ở các quán cà phê ven hồ để ngắm mặt nước và những hàng thông soi bóng.
-- Chụp ảnh với những góc nhìn khác nhau, từ cầu, bờ hồ hoặc từ những con dốc nhỏ xung quanh.
-
-## Thời điểm đẹp để ghé
-
-Buổi sáng sớm là lúc hồ yên tĩnh nhất, thường có làn sương mỏng và không khí mát lành. Buổi chiều muộn lại có ánh nắng dịu và hoàng hôn đẹp. Buổi tối, khu vực quanh hồ và chợ Đà Lạt thường nhộn nhịp hơn với nhiều quán ăn và hàng quán nhỏ.
-
-## Những điểm gần hồ
-
-Hồ Xuân Hương nằm gần quảng trường Lâm Viên, chợ Đà Lạt và nhiều quán cà phê, nhà hàng, nên rất tiện để kết hợp tham quan trong cùng một buổi. Bạn có thể bắt đầu bằng một vòng quanh hồ rồi tiếp tục di chuyển bộ đến các điểm xung quanh.
-
-## Lưu ý
-
-Hãy mang theo áo ấm nếu đi sớm hoặc tối, giữ gìn vệ sinh khu vực bờ hồ và chú ý an toàn khi đạp xe hoặc đi thuyền. Giờ hoạt động của các dịch vụ trên hồ có thể thay đổi theo mùa và thời tiết, nên bạn hãy kiểm tra trước khi đến.`,
-        },
-        {
-          title: "Quảng trường Lâm Viên",
-          desc: "Điểm hẹn nổi bật với công trình kiến trúc hoa dã quỳ.",
-          img: "https://i.pinimg.com/1200x/e0/e3/a9/e0e3a9d7effdb28ae6c2236b777157d5.jpg",
-          body: `Quảng trường Lâm Viên nằm bên cạnh hồ Xuân Hương và là một địa điểm quen thuộc của du khách khi đến Đà Lạt. Nơi đây có không gian rộng, hướng nhìn ra hồ và nổi bật với những công trình kính lớn lấy cảm hứng từ hoa dã quỳ và hoa atiso, những hình ảnh gắn với vùng đất cao nguyên.
-
-## Vì sao nên ghé
-
-- Không gian thoáng, dễ đi bộ, phù hợp cho cả gia đình và nhóm bạn.
-- Tầm nhìn đẹp ra hồ Xuân Hương và những dãy đồi thông phía xa.
-- Có nhiều góc chụp ảnh với các công trình kiến trúc đặc trưng.
-- Là điểm tập trung thuận tiện để bắt đầu một ngày khám phá trung tâm thành phố.
-
-## Thời điểm phù hợp
-
-Buổi sáng thường mát và ít người, thích hợp để đi dạo thong thả. Buổi chiều tối, khi đèn lên, không khí ở đây thường nhộn nhịp hơn. Vào cuối tuần và các dịp lễ, khu vực có thể đông khách, nên nếu thích sự yên tĩnh, bạn có thể đi vào các ngày trong tuần.
-
-## Kết hợp tham quan trong cùng một buổi
-
-Từ quảng trường, bạn có thể đi bộ dọc hồ Xuân Hương, ghé chợ Đà Lạt hoặc các quán cà phê gần đó. Nếu còn thời gian, hãy tìm hiểu thêm các điểm ở khu trung tâm như Nhà thờ Chánh tòa Đà Lạt, thường được gọi là nhà thờ Con Gà.
-
-## Lưu ý
-
-Hãy giữ gìn vệ sinh chung, không leo trèo lên các công trình và chú ý đồ đạc cá nhân ở nơi đông người. Bạn nên mang áo khoác mỏng cho buổi tối và kiểm tra các sự kiện hoặc hoạt động đang diễn ra trước khi đến.`,
-        },
-        {
-          title: "Đồi chè Cầu Đất",
-          desc: "Không gian xanh mát, thích hợp ngắm cảnh và chụp ảnh.",
-          img: "https://i.pinimg.com/1200x/46/76/70/467670ab204c0812cad9a932ecbb1c1a.jpg",
-          body: `Đồi chè Cầu Đất nằm cách trung tâm Đà Lạt hơn 20 km, ở độ cao lớn hơn khu vực thành phố nên không khí mát và trong lành hơn. Nơi đây nổi tiếng với những triền chè xanh trải dài, những hàng chè uốn lượn theo sườn đồi và khung cảnh yên bình, rất hợp cho ai thích thiên nhiên và muốn rời xa sự đông đúc của khu trung tâm.
-
-## Thời điểm đẹp để ghé
-
-Bình minh là lúc đẹp nhất. Nếu thời tiết thuận lợi, bạn có thể gặp biển mây và ánh nắng đầu ngày chiếu lên những luống chè. Mùa khô thường dễ có trời quang hơn. Vì ở xa trung tâm và thường lạnh hơn, bạn nên khởi hành sớm và mang theo áo ấm.
-
-## Bạn có thể làm gì
-
-- Đi dạo giữa các luống chè và chụp ảnh với những góc nhìn rộng.
-- Thưởng thức trà hoặc cà phê ở các quán ven đồi nếu có.
-- Tìm hiểu về quá trình trồng và chế biến chè nếu có khu tham quan mở cửa.
-- Kết hợp ngắm cảnh trên đường đi, vì cung đường tới Cầu Đất cũng có nhiều khung cảnh đẹp.
-
-## Chuẩn bị cho chuyến đi
-
-Hãy kiểm tra thời tiết và tình trạng đường đi trước khi khởi hành, vì đường lên đồi có đoạn dốc và đôi khi có sương mù. Mang theo giày đi bộ có độ bám tốt, nước uống và kem chống nắng. Nếu chưa quen đường đèo, bạn nên chọn phương tiện có người lái.
-
-## Lưu ý
-
-Đồi chè là nơi người dân canh tác, vì vậy bạn đừng giẫm lên luống chè, đừng hái chè, không xả rác và hãy tôn trọng những khu vực có biển cấm. Nên hỏi trước giờ mở cửa và các quy định tham quan tại từng điểm.`,
-        },
-        {
-          title: "Rừng thông Đà Lạt",
-          desc: "Tìm về sự yên tĩnh giữa những hàng thông đặc trưng phố núi.",
-          img: "https://i.pinimg.com/1200x/fe/d9/8b/fed98bd4d45a34a9f9169200a967474f.jpg",
-          body: `Những cánh rừng thông tạo nên nét đặc trưng của cảnh quan Đà Lạt. Thông mọc khắp thành phố, từ ven đường, quanh các hồ đến những sườn đồi, tạo nên khung cảnh xanh mát và mùi hương dễ chịu mà nhiều du khách nhớ mãi.
-
-## Bạn có thể làm gì giữa rừng thông
-
-- Đi dạo thư giãn trên những lối đi được phép, hít thở không khí trong lành.
-- Chụp ảnh với ánh nắng xuyên qua tán thông, đẹp nhất vào buổi sáng và chiều muộn.
-- Tổ chức picnic nhẹ nhàng ở những khu vực cho phép.
-- Đi bộ đường ngắn hoặc trekking nhẹ nếu bạn thích vận động ngoài trời.
-
-## Chọn điểm tham quan phù hợp
-
-Mỗi khu rừng thông có quy định khác nhau. Một số nơi là khu du lịch có thu phí và có đường đi rõ ràng, một số nơi là rừng được bảo vệ và không phải lúc nào cũng được phép vào. Bạn nên tìm hiểu trước và chọn những điểm được phép tiếp cận, đi theo lối đi quy định.
-
-## Giữ gìn thiên nhiên
-
-- Mang rác về hoặc bỏ đúng nơi quy định.
-- Không đốt lửa, không hút thuốc, vì rừng thông rất dễ cháy trong mùa khô.
-- Không bẻ cành, không khắc chữ lên thân cây và không làm ảnh hưởng đến động thực vật.
-- Giữ yên lặng để không làm phiền cảnh quan và những người xung quanh.
-
-## Lưu ý an toàn
-
-Hãy đi theo nhóm, mang theo nước uống và kiểm tra thời tiết trước khi đi. Trời ở vùng núi có thể tối và lạnh nhanh vào cuối chiều, nên bạn hãy tính thời gian để quay về trước khi trời tối. Nếu đi vào mùa mưa, chú ý đường trơn và tránh những nơi có nguy cơ sạt lở.`,
-        },
-      ];
-
-      // Phòng nào đã có yêu cầu đặt trên thiết bị này thì nhãn đổi từ "Còn phòng" (xanh) sang "Hết phòng" (đỏ)
-      function roomBookedNames() {
-        return new Set(
-          JSON.parse(localStorage.getItem("myBookings") || "[]").map(
-            (b) => b.room,
-          ),
-        );
-      }
-      function refreshRoomStatus() {
-        const booked = roomBookedNames();
-        document.querySelectorAll(".room-tag[data-room]").forEach((tag) => {
-          const isBooked = booked.has(tag.dataset.room);
-          tag.textContent = isBooked ? "Hết phòng" : tag.dataset.available;
-          tag.classList.toggle("sold-out", isBooked);
-        });
-      }
-      function roomCard(room, cat, index) {
-        const [name, desc, price, img] = room;
-        const booked = roomBookedNames().has(name);
-        return `<article class="room-card" data-search="${(name + " " + desc + " " + cat.name).toLowerCase()}">
-      <div class="room-image"><img loading="lazy" src="${img}" alt="${name}"><span class="room-tag${booked ? " sold-out" : ""}" data-room="${String(name).replace(/"/g, "&quot;")}" data-available="${cat.tag}">${booked ? "Hết phòng" : cat.tag}</span></div>
-      <div class="room-info"><h3>${name}</h3><p>${desc}</p><div class="room-meta"><span>♙ ${cat.name === "Phòng gia đình" ? "3–5 khách" : cat.name === "Phòng đơn" ? "1 khách" : "2 khách"}</span><span class="room-price">${price}</span></div>
-      <div class="room-actions"><button class="btn btn-primary" onclick="openBooking('${name.replace(/'/g, "\\'")}')">Đặt phòng</button></div></div></article>`;
-      }
-      function categoryMarkup(cat, index, limit = 8, expandable = false) {
-        const rooms = cat.rooms
-          .slice(0, limit)
-          .map((r, i) => roomCard(r, cat, i))
-          .join("");
-        const moreBtn = expandable
-          ? `<div class="category-actions"><button class="view-more" onclick="toggleCategory(this)">Xem thêm <span class="chev down"></span></button></div>`
-          : "";
-        return `<section class="category-block" ${expandable ? `id="service-category-${index}" data-expandable="true"` : ""}><div class="category-head"><div><h2>${cat.name}</h2><p>${cat.desc}</p></div></div><div class="room-grid">${rooms}</div>${moreBtn}</section>`;
-      }
-      document.getElementById("featuredRooms").innerHTML = categories
-        .map((c, i) => roomCard(c.rooms[i], c, i))
-        .join("");
-      document.getElementById("homeCategories").innerHTML = categories
-        .map(
-          (c, i) =>
-            categoryMarkup(c, i, 4, false) +
-            `<div style="text-align:center;margin:-35px 0 48px"><button class="view-more" onclick="openServiceCategory(${i})">Xem thêm <span class="chev"></span></button></div>`,
-        )
-        .join("");
-      document.getElementById("serviceCategories").innerHTML = categories
-        .map((c, i) => categoryMarkup(c, i, 8, true))
-        .join("");
-      document.getElementById("guideCards").innerHTML = guides
-        .map(
-          (a, i) =>
-            `<article class="article-card"><img loading="lazy" src="${a.img}" alt="${a.title}"><div class="article-body"><h3>${a.title}</h3><p>${a.desc}</p><button class="text-link" onclick="openArticle('guide',${i})">Xem thêm</button></div></article>`,
-        )
-        .join("");
-      document.getElementById("exploreCards").innerHTML = explorations
-        .map(
-          (a, i) =>
-            `<article class="explore-card"><img loading="lazy" src="${a.img}" alt="${a.title}"><div class="explore-body"><h3>${a.title}</h3><p>${a.desc}</p><button class="explore-more" onclick="openArticle('explore',${i})">Xem thêm <span class="chev"></span></button></div></article>`,
-        )
-        .join("");
-      const navIndicator = document.getElementById("navIndicator");
-      const mainNav = document.getElementById("mainNav");
-
-      function moveNavIndicator(link) {
-        if (!navIndicator || !link || !mainNav) return;
-        if (window.getComputedStyle(mainNav).flexDirection === "column") {
-          navIndicator.style.opacity = "0";
-          return;
-        }
-        const navRect = mainNav.getBoundingClientRect();
-        const linkRect = link.getBoundingClientRect();
-        navIndicator.style.left = linkRect.left - navRect.left + "px";
-        navIndicator.style.width = linkRect.width + "px";
-        navIndicator.classList.add("ready");
-      }
-
-      function updateNavIndicator() {
-        const active = mainNav.querySelector(".nav-link.active");
-        if (active) {
-          moveNavIndicator(active);
-        } else if (navIndicator) {
-          navIndicator.classList.remove("ready");
-        }
-      }
-
-      const BOOKING_DOT_KEY = "myBookingsNew";
-      function updateBookingDot() {
-        const hasNew =
-          localStorage.getItem(BOOKING_DOT_KEY) === "1" &&
-          JSON.parse(localStorage.getItem("myBookings") || "[]").length > 0;
-        document
-          .querySelectorAll('.nav-link[data-page="mybookings"]')
-          .forEach((a) => {
-            a.classList.toggle("has-dot", hasNew);
-            if (hasNew) a.title = "Bạn có yêu cầu đặt phòng mới";
-            else a.removeAttribute("title");
-          });
-        document
-          .getElementById("menuToggle")
-          .classList.toggle("has-dot", hasNew);
-      }
-      function markNewBooking() {
-        if (
-          document.getElementById("mybookingsPage").classList.contains("active")
-        )
-          return;
-        localStorage.setItem(BOOKING_DOT_KEY, "1");
-        updateBookingDot();
-      }
-      function clearBookingDot() {
-        localStorage.removeItem(BOOKING_DOT_KEY);
-        updateBookingDot();
-      }
-      window.addEventListener("storage", () => {
-        updateBookingDot();
-        refreshRoomStatus();
-      });
-      function showPage(page, opts = {}) {
-        document
-          .querySelectorAll(".page")
-          .forEach((p) => p.classList.remove("active"));
-        const target = document.getElementById(page + "Page");
-        if (target) target.classList.add("active");
-        document
-          .querySelectorAll(".nav-link")
-          .forEach((a) =>
-            a.classList.toggle("active", a.dataset.page === page),
-          );
-        document.getElementById("mainNav").classList.remove("open");
-        document.getElementById("searchPanel").classList.add("hidden");
-        if (page === "mybookings") clearBookingDot();
-        updateNavIndicator();
-        if (typeof opts.scrollTo === "number")
-          window.scrollTo({ top: opts.scrollTo, left: 0, behavior: "instant" });
-        else window.scrollTo({ top: 0, behavior: "smooth" });
-        history.replaceState(null, "", "#" + page);
-      }
-      document.querySelectorAll(".nav-link").forEach((a) =>
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
-          showPage(a.dataset.page);
-        }),
-      );
-      window.addEventListener("resize", updateNavIndicator);
-      requestAnimationFrame(() => {
-        requestAnimationFrame(updateNavIndicator);
-      });
-      function scrollToSection(id) {
-        showPage("home");
-        setTimeout(
-          () =>
-            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }),
-          100,
-        );
-      }
-      function openServiceCategory(index) {
-        showPage("services");
-        setTimeout(() => {
-          const target = document.getElementById(`service-category-${index}`);
-          if (target)
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 120);
-      }
-      function toggleCategory(button) {
-        const block = button.closest(".category-block");
-        block.classList.toggle("expanded");
-        button.innerHTML = block.classList.contains("expanded")
-          ? 'Thu gọn <span class="chev up"></span>'
-          : 'Xem thêm <span class="chev down"></span>';
-      }
-      let homeScrollY = 0;
-      function backToHome() {
-        showPage("home", { scrollTo: homeScrollY });
-      }
-      function renderBody(text) {
-        const esc = (t) =>
-          t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        return text
-          .trim()
-          .split(/\n\s*\n/)
-          .map((blk) => {
-            const lines = blk
-              .split("\n")
-              .map((l) => l.trim())
-              .filter(Boolean);
-            if (lines[0].startsWith("## "))
-              return `<h2>${esc(lines[0].slice(3))}</h2>`;
-            if (lines.every((l) => l.startsWith("- ")))
-              return `<ul class="article-list">${lines.map((l) => `<li>${esc(l.slice(2))}</li>`).join("")}</ul>`;
-            return `<p class="article-text">${esc(lines.join(" "))}</p>`;
-          })
-          .join("");
-      }
-      function openArticle(type, index) {
-        const item = (type === "guide" ? guides : explorations)[index];
-        homeScrollY = window.scrollY;
-        document.getElementById("articleDetail").innerHTML =
-          `<a href="#" class="back-link" onclick="backToHome();return false"><span class="chev left"></span>Quay lại trang chủ</a><span class="eyebrow">${type === "guide" ? "CẨM NANG VI VU" : "KHÁM PHÁ ĐÀ LẠT"}</span><h1>${item.title}</h1><img src="${item.img}" alt="${item.title}">${renderBody(item.body)}<div style="margin-top:28px"><button class="btn btn-primary" onclick="showPage('services')">Tìm phòng tại 10HARDHOME →</button></div>`;
-        showPage("article");
-      }
-      const backdrop = document.getElementById("bookingBackdrop");
-      const checkinInput = document.getElementById("checkin");
-      const checkoutInput = document.getElementById("checkout");
-      const pad2 = (v) => String(v).padStart(2, "0");
-      const localDate = (d) =>
-        `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
-      const addDays = (str, k) => {
-        const [y, m, d] = str.split("-").map(Number);
-        return localDate(new Date(y, m - 1, d + k));
-      };
-      function syncCheckout(reset) {
-        const minOut = addDays(checkinInput.value, 1);
-        checkoutInput.min = minOut;
-        if (reset || !checkoutInput.value || checkoutInput.value < minOut)
-          checkoutInput.value = minOut;
-      }
-      function refreshBookingDates(reset) {
-        const today = localDate(new Date());
-        checkinInput.min = today;
-        if (reset || !checkinInput.value || checkinInput.value < today)
-          checkinInput.value = today;
-        syncCheckout(reset);
-      }
-      checkinInput.addEventListener("change", () => {
-        if (!checkinInput.value || checkinInput.value < checkinInput.min)
-          checkinInput.value = checkinInput.min;
-        syncCheckout(false);
-      });
-      checkoutInput.addEventListener("change", () => {
-        if (!checkoutInput.value || checkoutInput.value < checkoutInput.min)
-          checkoutInput.value = checkoutInput.min;
-      });
-      checkinInput.min = localDate(new Date());
-      setInterval(() => {
-        if (backdrop.classList.contains("show")) refreshBookingDates(false);
-        else checkinInput.min = localDate(new Date());
-      }, 60000);
-      document.addEventListener("visibilitychange", () => {
-        if (!document.hidden) refreshBookingDates(false);
-      });
-      function openBooking(room) {
-        refreshBookingDates(true);
-        document.getElementById("bookingRoom").value = room;
-        backdrop.classList.add("show");
-        document.body.style.overflow = "hidden";
-
-        requestAnimationFrame(() => {
-          document.getElementById("guestName").focus({ preventScroll: true });
-          document.getElementById("bookingForm").scrollTop = 0;
-        });
-      }
-      function closeBooking() {
-        backdrop.classList.remove("show");
-        document.body.style.overflow = "";
-      }
-      document
-        .getElementById("closeBooking")
-        .addEventListener("click", closeBooking);
-      backdrop.addEventListener("click", (e) => {
-        if (e.target === backdrop) closeBooking();
-      });
-      document.getElementById("bookingForm").addEventListener("submit", (e) => {
-        e.preventDefault();
-        if (
-          checkinInput.value < localDate(new Date()) ||
-          checkoutInput.value <= checkinInput.value
-        ) {
-          showToast(
-            "Ngày nhận phòng phải từ hôm nay trở đi và ngày trả phòng phải sau ngày nhận phòng.",
-          );
-          refreshBookingDates(false);
-          return;
-        }
-        const data = new FormData(e.target);
-        const booking = {
-          id: Date.now().toString(),
-          room: data.get("room"),
-          image:
-            categories
-              .flatMap((category) => category.rooms)
-              .find((room) => room[0] === data.get("room"))?.[3] || "",
-          name: data.get("name"),
-          phone: data.get("phone"),
-          checkin: data.get("checkin"),
-          checkout: data.get("checkout"),
-          note: data.get("note") || "Không có",
-        };
-        const bookings = JSON.parse(localStorage.getItem("myBookings") || "[]");
-        bookings.push(booking);
-        localStorage.setItem("myBookings", JSON.stringify(bookings));
-        markNewBooking();
-        refreshRoomStatus();
-
-        closeBooking();
-        e.target.reset();
-        renderMyBookings();
-        showToast("Đã lưu yêu cầu đặt phòng.");
-      });
-      function showToast(message) {
-        const t = document.getElementById("toast");
-        t.textContent = message;
-        t.classList.add("show");
-        setTimeout(() => t.classList.remove("show"), 4500);
-      }
-      document.getElementById("searchToggle").addEventListener("click", () => {
-        document.getElementById("searchPanel").classList.toggle("hidden");
-        document.getElementById("searchInput").focus();
-      });
-      document
-        .getElementById("menuToggle")
-        .addEventListener("click", () =>
-          document.getElementById("mainNav").classList.toggle("open"),
-        );
-      // Nhấn vào chỗ khác trên trang thì đóng hộp tìm kiếm
-      document.addEventListener("click", (e) => {
-        const panel = document.getElementById("searchPanel");
-        if (panel.classList.contains("hidden")) return;
-        const path = e.composedPath();
-        if (
-          path.includes(panel) ||
-          path.includes(document.getElementById("searchToggle"))
-        )
-          return;
-        panel.classList.add("hidden");
-      });
-      function searchRooms() {
-        const q = document
-            .getElementById("searchInput")
-            .value.trim()
-            .toLowerCase(),
-          out = document.getElementById("searchResults");
-        if (!q) {
-          out.textContent = "Nhập từ khóa để tìm phòng phù hợp.";
-          return;
-        }
-        const matches = [];
-        categories.forEach((cat) =>
-          cat.rooms.forEach((room) => {
-            if ((room.join(" ") + " " + cat.name).toLowerCase().includes(q))
-              matches.push({ room, cat });
-          }),
-        );
-        if (!matches.length) {
-          out.textContent = "Không tìm thấy phòng phù hợp.";
-          return;
-        }
-        out.innerHTML = matches
-          .slice(0, 10)
-          .map(
-            (x) =>
-              `<a class="search-result" href="#" onclick="showPage('services');setTimeout(()=>document.getElementById('serviceCategories').scrollIntoView({behavior:'smooth'}),100);return false"><strong>${x.room[0]}</strong><br>${x.cat.name} · ${x.room[2]}</a>`,
-          )
-          .join("");
-      }
-      document
-        .getElementById("searchButton")
-        .addEventListener("click", searchRooms);
-      document
-        .getElementById("searchInput")
-        .addEventListener("keydown", (e) => {
-          if (e.key === "Enter") searchRooms();
-        });
-
-      function cancelBooking(id) {
-        const bookings = JSON.parse(localStorage.getItem("myBookings") || "[]");
-        localStorage.setItem(
-          "myBookings",
-          JSON.stringify(bookings.filter((booking) => booking.id !== id)),
-        );
-        renderMyBookings();
-        updateBookingDot();
-        refreshRoomStatus();
-        showToast("Đã hủy yêu cầu đặt phòng trên thiết bị này.");
-      }
-
-      renderMyBookings();
-      updateBookingDot();
-
-      let currentSlide = 0;
-      const layers = [...document.querySelectorAll(".hero-layer")],
-        dots = [...document.querySelectorAll(".hero-dot")];
-      function setSlide(next) {
-        currentSlide = next;
-        layers.forEach((layer, i) => {
-          layer.classList.toggle("active", i === next);
-          layer.classList.remove("leaving");
-        });
-        dots.forEach((dot, i) => dot.classList.toggle("active", i === next));
-      }
-      let slideTimer;
-      function restartSlideTimer() {
-        clearInterval(slideTimer);
-        slideTimer = setInterval(
-          () => setSlide((currentSlide + 1) % layers.length),
-          5000,
-        );
-      }
-      function goSlide(n) {
-        setSlide((n + layers.length) % layers.length);
-        restartSlideTimer();
-      }
-      dots.forEach((dot, i) => dot.addEventListener("click", () => goSlide(i)));
-      document
-        .getElementById("heroPrev")
-        .addEventListener("click", () => goSlide(currentSlide - 1));
-      document
-        .getElementById("heroNext")
-        .addEventListener("click", () => goSlide(currentSlide + 1));
-
-      // Hỗ trợ vuốt chuyển banner trên điện thoại và thiết bị cảm ứng.
-      // touch-action: pan-y vẫn cho phép người dùng cuộn trang theo chiều dọc.
-      const hero = document.querySelector(".hero");
-      if (hero) {
-        hero.style.touchAction = "pan-y";
-        let touchStartX = 0;
-        let touchStartY = 0;
-        let touchPointerId = null;
-
-        hero.addEventListener("pointerdown", (event) => {
-          if (event.pointerType === "mouse" || !event.isPrimary) return;
-          touchStartX = event.clientX;
-          touchStartY = event.clientY;
-          touchPointerId = event.pointerId;
-        });
-
-        hero.addEventListener("pointerup", (event) => {
-          if (touchPointerId !== event.pointerId) return;
-
-          const deltaX = event.clientX - touchStartX;
-          const deltaY = event.clientY - touchStartY;
-          touchPointerId = null;
-
-          // Chỉ đổi banner khi thao tác vuốt đủ dài và theo chiều ngang.
-          if (
-            Math.abs(deltaX) >= 45 &&
-            Math.abs(deltaX) > Math.abs(deltaY) * 1.2
-          ) {
-            goSlide(deltaX < 0 ? currentSlide + 1 : currentSlide - 1);
-          }
-        });
-
-        hero.addEventListener("pointercancel", () => {
-          touchPointerId = null;
-        });
-      }
-
-      restartSlideTimer();
-
-      (function () {
-        const fab = document.getElementById("chatFab");
-        const box = document.getElementById("chatBox");
-        const msgs = document.getElementById("chatMsgs");
-        const form = document.getElementById("chatForm");
-        const input = document.getElementById("chatInput");
-        let started = false;
-        const norm = (t) =>
-          t
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .replace(/đ/g, "d");
-        const money = (v) => v.toLocaleString("vi-VN") + "đ";
-        function add(text, who) {
-          const d = document.createElement("div");
-          d.className = "chat-msg " + who;
-          d.textContent = text;
-          msgs.appendChild(d);
-          msgs.scrollTop = msgs.scrollHeight;
-        }
-        function chips(list) {
-          const w = document.createElement("div");
-          w.className = "chat-chips";
-          list.forEach(([label, fn]) => {
-            const b = document.createElement("button");
-            b.type = "button";
-            b.className = "chat-chip";
-            b.textContent = label;
-            b.addEventListener("click", fn);
-            w.appendChild(b);
-          });
-          msgs.appendChild(w);
-          msgs.scrollTop = msgs.scrollHeight;
-        }
-        function say(text, list) {
-          setTimeout(() => {
-            add(text, "bot");
-            if (list) chips(list);
-          }, 350);
-        }
-        function setOpen(open) {
-          box.classList.toggle("show", open);
-          fab.classList.toggle("open", open);
-          fab.setAttribute("aria-expanded", String(open));
-          fab.setAttribute(
-            "aria-label",
-            open ? "Đóng khung chat" : "Mở khung chat",
-          );
-          if (open) {
-            if (!started) {
-              started = true;
-              add(
-                "Xin chào! Mình là trợ lý tự động của 10HARDHOME. Bạn muốn mình giúp gì hôm nay?",
-                "bot",
-              );
-              chips(MAIN);
+          .map((b) => {
+            if (b.type === "custom") {
+              return `
+<article class="my-booking-card">
+<div class="my-booking-info">
+<span class="custom-badge">Đơn theo yêu cầu</span>
+<h3>${esc(b.need)}</h3>
+<p>Mã đơn: ${esc(b.id)}</p>
+<p>Địa chỉ giao: ${esc(b.address || "Chưa cung cấp")}</p>
+<p>Người đặt: ${esc(b.name)}</p>
+<p>Điện thoại: ${esc(b.phone)}</p>
+<p>Yêu cầu chi tiết: ${esc(b.detail || "Không có")}</p>
+<div class="my-booking-actions">
+<button class="btn btn-cancel" onclick="cancelBooking('${esc(b.id)}')">Hủy đơn hàng</button>
+<span class="my-booking-note">*Shop sẽ liên hệ để tư vấn và báo giá chi tiết*</span>
+</div>
+</div>
+</article>`;
             }
-            setTimeout(() => input.focus(), 250);
-          }
-        }
-        const go = (fn) => () => {
-          setOpen(false);
-          fn();
-        };
-        const ask = (q) => () => handle(q);
-        const MAIN = [
-          ["Giá phòng", ask("Giá phòng")],
-          ["Đặt phòng", ask("Đặt phòng")],
-          ["Gợi ý địa điểm", ask("Gợi ý địa điểm")],
-          ["Liên hệ", ask("Liên hệ")],
-        ];
-        function contact() {
-          const o = {};
-          document.querySelectorAll(".contact-item").forEach((it) => {
-            const k = it.querySelector("strong")?.textContent.trim();
-            const v = it
-              .querySelector(":scope > div > span, :scope > div > a")
-              ?.textContent.trim();
-            if (k && v) o[k] = v;
-          });
-          return o;
-        }
-        function priceText() {
-          return categories
-            .map((c) => {
-              const nums = c.rooms
-                .map((r) => parseInt(String(r[2]).replace(/\D/g, ""), 10))
-                .filter(Boolean);
-              const lo = Math.min(...nums),
-                hi = Math.max(...nums);
-              return (
-                "• " +
-                c.name +
-                ": " +
-                (lo === hi ? money(lo) : money(lo) + " – " + money(hi)) +
-                " / đêm"
-              );
-            })
-            .join("\n");
-        }
-        const toServices = [
-          "Xem danh sách phòng",
-          go(() => showPage("services")),
-        ];
-        function handle(text) {
-          add(text, "user");
-          const t = norm(text);
-          const c = contact();
-          const line = Object.entries(c)
-            .map(([k, v]) => k + ": " + v)
-            .join("\n");
-          if (/\b(xin chao|chao|hello|hi|alo)\b/.test(t)) {
-            say(
-              "Xin chào! Mình có thể giúp bạn xem giá phòng, hướng dẫn đặt phòng, gợi ý địa điểm ở Đà Lạt hoặc thông tin liên hệ.",
-              MAIN,
-            );
-          } else if (
-            /\b(gia|bao nhieu|chi phi|bang gia)\b|tien phong/.test(t)
-          ) {
-            say(
-              "Giá phòng tham khảo:\n" +
-                priceText() +
-                "\n\nGiá có thể thay đổi theo thời điểm. Bạn xem chi tiết từng phòng ở trang Dịch vụ nhé.",
-              [toServices, ["Đặt phòng", ask("Đặt phòng")]],
-            );
-          } else if (
-            /dat phong|dat cho|booking|\bbook\b|nhan phong|tra phong/.test(t)
-          ) {
-            say(
-              "Để đặt phòng, bạn vào trang Dịch vụ, chọn phòng và bấm nút Đặt phòng. Điền họ tên, số điện thoại, ngày nhận phòng (từ hôm nay trở đi) và ngày trả phòng (sau ngày nhận). 10HARDHOME sẽ liên hệ lại để xác nhận.",
-              [toServices],
-            );
-          } else if (/dia chi|o dau|vi tri|ban do|duong di/.test(t)) {
-            say("Địa chỉ: " + (c["Địa chỉ"] || "Đà Lạt, Lâm Đồng") + ".", [
-              ["Xem trang Liên hệ", go(() => showPage("contact"))],
-            ]);
-          } else if (
-            /lien he|dien thoai|so dt|sdt|hotline|email|mail|zalo/.test(t)
-          ) {
-            say(
-              (line || "Bạn vui lòng xem thông tin ở trang Liên hệ.") +
-                "\n\nBạn cũng có thể gửi yêu cầu trong trang Liên hệ.",
-              [["Xem trang Liên hệ", go(() => showPage("contact"))]],
-            );
-          } else if (
-            /goi y|tham quan|di dau|du lich|dia diem|kham pha|ho xuan huong|lam vien|cau dat|rung thong|choi/.test(
-              t,
-            )
-          ) {
-            say(
-              "Một số địa điểm nên ghé khi ở Đà Lạt, bạn bấm để xem chi tiết:",
-              explorations.map((a, i) => [
-                a.title,
-                go(() => openArticle("explore", i)),
-              ]),
-            );
-          } else if (
-            /thoi tiet|mua nao|thoi diem|hanh ly|mang gi|kinh nghiem|chuan bi/.test(
-              t,
-            )
-          ) {
-            say(
-              "Bạn có thể tham khảo các bài trong Cẩm nang vi vu:",
-              guides.map((a, i) => [
-                a.title,
-                go(() => openArticle("guide", i)),
-              ]),
-            );
-          } else if (/cam on|thanks|thank/.test(t)) {
-            say("Không có gì ạ! Chúc bạn có chuyến đi thật vui vẻ ở Đà Lạt.");
-          } else {
-            say(
-              "Mình chưa hiểu rõ câu hỏi này. Bạn có thể chọn gợi ý bên dưới" +
-                (line ? " hoặc liên hệ trực tiếp:\n" + line : "") +
-                ".",
-              MAIN,
-            );
-          }
-        }
-        fab.addEventListener("click", () =>
-          setOpen(!box.classList.contains("show")),
-        );
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          const text = input.value.trim();
-          if (!text) return;
-          input.value = "";
-          handle(text);
-        });
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && box.classList.contains("show"))
-            setOpen(false);
-        });
-        // Nhấn vào chỗ khác trên trang thì đóng chatbox
-        document.addEventListener("click", (e) => {
-          if (!box.classList.contains("show")) return;
-          const path = e.composedPath();
-          if (path.includes(box) || path.includes(fab)) return;
-          setOpen(false);
-        });
-      })();
+            return `
+<article class="my-booking-card">
+<div class="my-booking-info">
+<span class="product-badge">Đơn đặt hoa</span>
+<h3>${esc(b.room)}</h3>
+<p>Mã đơn: ${esc(b.id)}</p>
+<p>Địa chỉ giao: ${esc(b.address || "Chưa cung cấp")}</p>
+<p>Ngày giao: ${esc(b.checkout)}</p>
+<p>Người đặt: ${esc(b.name)}</p>
+<p>Điện thoại: ${esc(b.phone)}</p>
+<p>Ghi chú: ${esc(b.note || "Không có")}</p>
+<div class="my-booking-actions">
+<button class="btn btn-cancel" onclick="cancelBooking('${esc(b.id)}')">Hủy đơn hàng</button>
+<span class="my-booking-note">*Chúng tôi sẽ liên hệ với bạn để hoàn tất đơn hàng trong giây lát*</span>
+</div>
+</div>
+${b.image ? `<img class="my-booking-image" src="${esc(b.image)}" alt="Ảnh ${esc(b.room)}">` : ""}
+</article>`;
+          })
+          .join("");
+      }
 
-      const initial = (location.hash || "").replace("#", "");
-      if (["services", "about", "contact"].includes(initial)) showPage(initial);
+      let toastTimer;
+      function showToast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => t.classList.remove("show"), 3000);
+      }
+
+      const chatFab = document.getElementById("chatFab");
+      const chatBox = document.getElementById("chatBox");
+      const chatMsgs = document.getElementById("chatMsgs");
+      const chatForm = document.getElementById("chatForm");
+
+      function addMsg(text, who) {
+        const div = document.createElement("div");
+        div.className = "chat-msg " + who;
+        div.textContent = text;
+        chatMsgs.appendChild(div);
+        chatMsgs.scrollTop = chatMsgs.scrollHeight;
+      }
+
+      function botReply(text) {
+        const t = text.toLowerCase();
+        if (t.includes("giá") || t.includes("bao nhiêu")) {
+          return "Hoa hồng từ 150.000đ, cẩm chướng từ 250.000đ, hướng dương từ 420.000đ, lan từ 700.000đ ạ. Bạn muốn xem loại nào?";
+        }
+        if (t.includes("giao") || t.includes("ship")) {
+          return "Chúng tôi giao hoa tận nơi trong nội thành Đà Lạt trong ngày. Bạn để lại số điện thoại để được tư vấn nhé!";
+        }
+        if (t.includes("hồng"))
+          return "Hoa hồng bên mình có đỏ, trắng, vàng, phấn, kem... Bạn muốn tặng cho dịp gì ạ?";
+        if (t.includes("lan"))
+          return "Lan hồ điệp trắng và hồng là lựa chọn sang trọng, giá từ 700.000đ/chậu. Bạn cần tư vấn thêm không?";
+        if (t.includes("đặt") || t.includes("mua"))
+          return "Bạn có thể bấm nút 'Đặt hoa' ở từng sản phẩm, hoặc dùng mục 'Đặt hoa theo yêu cầu' để được thiết kế riêng ạ!";
+        if (t.includes("yêu cầu"))
+          return "Bạn vào trang Sản phẩm (hoặc trang chủ), kéo xuống mục 'Đặt hoa theo yêu cầu', chọn mục đích và mô tả chi tiết, shop sẽ liên hệ ạ!";
+        if (t.includes("giờ") || t.includes("mở cửa"))
+          return "Cửa hàng mở cửa 7:00 – 21:00 hằng ngày, kể cả cuối tuần ạ.";
+        if (t.includes("địa chỉ") || t.includes("ở đâu"))
+          return "10HARD FLOWER tại Đà Lạt, Lâm Đồng. Bạn xem bản đồ ở trang Liên hệ nhé!";
+        return "Cảm ơn bạn đã nhắn tin! Bạn cần tư vấn về loại hoa, giá cả hay giao hàng ạ?";
+      }
+
+      chatFab.addEventListener("click", () => {
+        chatBox.classList.toggle("show");
+        chatFab.classList.toggle("open");
+        chatFab.setAttribute(
+          "aria-expanded",
+          chatBox.classList.contains("show"),
+        );
+        if (chatBox.classList.contains("show") && !chatMsgs.children.length) {
+          addMsg(
+            "Xin chào! Mình là trợ lý 10HARD FLOWER. Bạn cần tư vấn hoa gì hôm nay ạ?",
+            "bot",
+          );
+        }
+      });
+
+      document.querySelectorAll(".chat-faq").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const q = btn.dataset.q;
+          addMsg(q, "user");
+          setTimeout(() => addMsg(botReply(q), "bot"), 500);
+        });
+      });
+
+      chatForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const input = document.getElementById("chatInput");
+        const text = input.value.trim();
+        if (!text) return;
+        addMsg(text, "user");
+        input.value = "";
+        setTimeout(() => addMsg(botReply(text), "bot"), 600);
+      });
+
+      /* ============ KHỞI TẠO ============ */
+      renderFeatured();
+      renderCategories();
+      document.getElementById("homeCustomBlock").innerHTML = customBlockHTML;
+      document.getElementById("serviceCustomBlock").innerHTML = customBlockHTML;
+      bindCustomForm();
+      moveIndicator();
+      renderMyBookings();
+      startHeroVideos();
     </script>
   </body>
 </html>
