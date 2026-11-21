@@ -268,6 +268,10 @@
         position: relative;
         overflow: hidden;
         background: var(--pink-light);
+        touch-action: pan-y; /* cho phép cuộn dọc, vuốt ngang do JS xử lý */
+      }
+      .hero.dragging .hero-layer {
+        transition: none !important; /* bám theo ngón tay, không bị trễ */
       }
       .hero-layer {
         position: absolute;
@@ -1764,7 +1768,9 @@
         padding: 30px;
       }
       .order-panel h2 {
-        font: 800 22px "Montserrat", sans-serif;
+        font:
+          800 22px "Montserrat",
+          sans-serif;
         color: var(--dark);
         margin-bottom: 4px;
       }
@@ -1797,12 +1803,16 @@
         margin-bottom: 12px;
       }
       .product-detail h1 {
-        font: 800 26px/1.25 "Montserrat", sans-serif;
+        font:
+          800 26px/1.25 "Montserrat",
+          sans-serif;
         color: var(--dark);
         margin-bottom: 8px;
       }
       .product-price {
-        font: 800 22px "Montserrat", sans-serif;
+        font:
+          800 22px "Montserrat",
+          sans-serif;
         color: var(--pink-dark);
         margin-bottom: 14px;
       }
@@ -1905,7 +1915,9 @@
             <a class="nav-link" href="#" data-page="services">Sản phẩm</a>
             <a class="nav-link" href="#" data-page="about">Giới thiệu</a>
             <a class="nav-link" href="#" data-page="contact">Liên hệ</a>
-            <a class="nav-link" href="#" data-page="mybookings">Đơn của tôi<span class="red-dot hidden" id="navOrderDot"></span></a>
+            <a class="nav-link" href="#" data-page="mybookings"
+              >Đơn của tôi<span class="red-dot hidden" id="navOrderDot"></span
+            ></a>
           </nav>
           <button
             class="search-toggle"
@@ -2583,7 +2595,6 @@
       </div>
     </footer>
 
-
     <button
       class="chat-fab"
       id="chatFab"
@@ -2814,222 +2825,222 @@
       /* ============ DATA SẢN PHẨM ============ */
       const categories = [
         {
-          name: "Hoa hồng",
+          name: "Hoa Hồng",
           desc: "Biểu tượng của tình yêu và sự lãng mạn, phù hợp cho mọi dịp đặc biệt.",
           tag: "Còn hoa",
           rooms: [
             [
-              "Hồng Đỏ Tình Yêu",
-              "Bó hồng đỏ lãng mạn, phù hợp cho người thương.",
+              "Combo Hoa Hồng Pastel Ngọt Ngào",
+              "Hợp làm quà tặng sinh nhật, kỷ niệm.",
               "350.000đ / bó",
-              "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=700&q=82",
+              "images/combo.jpg",
             ],
             [
-              "Hồng Trắng Tinh Khôi",
-              "Hồng trắng nhẹ nhàng, tinh tế cho mọi dịp.",
+              "Hoa Hồng Mix Vintage",
+              "Phong cách tự nhiên, nghệ thuật.",
               "380.000đ / bó",
-              "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=82",
+              "images/flower.jpeg",
             ],
             [
-              "Hồng Vàng Rực Rỡ",
-              "Sắc vàng tươi sáng, thay lời chúc may mắn.",
+              "Hoa Hồng Bi Hồng Phấn Và Lan Hồ Điệp",
+              "Phong cách bánh kem lãng mạn, nữ tính.",
               "360.000đ / bó",
-              "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=82",
+              "images/hoahồđiệp.jpg",
             ],
             [
-              "Hồng Phấn Dịu Dàng",
-              "Sắc hồng ngọt ngào, món quà tinh tế.",
+              "Hoa Hồng Đỏ Bi Gói Ren",
+              "Quyến rũ, sang trọng, phù hợp tặng người yêu.",
               "390.000đ / bó",
-              "https://images.unsplash.com/photo-1495231916356-a86217efff12?auto=format&fit=crop&w=700&q=82",
+              "images/hồngđỏ.jpg",
             ],
             [
-              "Hồng Kem Mộng Mơ",
-              "Tông màu nhẹ nhàng, tạo cảm giác thư thái.",
+              "Hoa Hồng Hồng Đậm Phong Cách Nghệ Thuật",
+              "Hiện đại, cá tính.",
               "370.000đ / bó",
-              "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=700&q=82",
+              "images/hốngsen.jpg",
             ],
             [
-              "Hồng Đơn Bình Yên",
-              "Một bông hồng nhỏ để gửi gắm yêu thương.",
+              "Hoa Hồng Bi Phấn Và Cúc Họa Mi Ngọt Ngào",
+              "Mang vẻ nhẹ nhàng, nữ tính.",
               "150.000đ / bông",
-              "https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=700&q=82",
+              "images/IMG_7330.jpg",
             ],
             [
-              "Hồng Vintage",
-              "Điểm nhấn hoài cổ và gần gũi.",
+              "Hoa Hồng Đen Và Môn Trắng Phong Cách Dark Romantic",
+              "Phong cách cá tính, bí ẩn, dành cho người yêu thích sự độc đáo.",
               "400.000đ / bó",
-              "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=700&q=82",
+              "images/IMG_7331.jpg",
             ],
             [
-              "Hồng Ban Mai",
-              "Bó hoa sáng thoáng với đầy đủ phụ kiện.",
+              "Hoa Hồng Bi Và Mao Lương Hồng Phấn",
+              "Dịu dàng, lãng mạn, rất hợp tặng bạn gái hoặc người thân.",
               "390.000đ / bó",
-              "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=82",
+              "images/Maolươngmix.jpg",
             ],
           ],
         },
         {
-          name: "Hoa cẩm chướng",
+          name: "Hoa Cẩm Chướng, Cẩm Tú Cầu, Violet",
           desc: "Vẻ đẹp dịu dàng, tượng trưng cho tình cảm gia đình và sự ngưỡng mộ.",
           tag: "Còn hoa",
           rooms: [
             [
-              "Cẩm Chướng Lãng Mạn",
-              "Sắc hoa nhẹ nhàng cho những ngày thật dịu dàng.",
+              "Hoa Cẩm Tú Cầu Tím Lavender",
+              "Phong cách mộng mơ, thanh lịch.",
               "250.000đ / bó",
-              "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=700&q=82",
+              "images/Cẩmtuscau.jpg",
             ],
             [
-              "Cẩm Chướng Hồng Phấn",
-              "Thiết kế gần gũi, tạo cảm giác ấm áp như ở nhà.",
+              "Hoa Cẩm Chướng Hồng Phối Hoa Trắng",
+              "Mộc mạc, ấm áp, phù hợp tặng mẹ, cô giáo.",
               "280.000đ / bó",
-              "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=82",
+              "images/hoahong.jpg",
             ],
             [
-              "Cẩm Chướng Mộng Mơ",
-              "Tông màu dịu nhẹ và góc nghỉ ngơi thoải mái.",
+              "Hoa Mẫu Đơn Hồng Và Cẩm Tú Cầu Đỏ Đô",
+              "Phong cách nghệ thuật, lãng mạn pha chút cổ điển.",
               "300.000đ / bó",
-              "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=82",
+              "images/IMG_7312.jpeg",
             ],
             [
-              "Cẩm Chướng Trắng Ngà",
-              "Phù hợp cho lời chúc mừng và sự kính trọng.",
+              "Hoa Tweedia Xanh Dương Mộc Mạc",
+              "Thanh nhã, trong trẻo, phù hợp tặng bạn bè hoặc làm quà nhỏ xinh.",
               "320.000đ / bó",
-              "https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=700&q=82",
+              "images/lamtinh.jpg",
             ],
             [
-              "Cẩm Chướng Hoàng Hôn",
-              "Sắc hoa thư giãn với cách bài trí tinh tế.",
+              "Hoa Violet Tím Lavender",
+              "Tinh tế, cá tính, mang hương thơm dễ chịu.",
               "290.000đ / bó",
-              "https://images.unsplash.com/photo-1495231916356-a86217efff12?auto=format&fit=crop&w=700&q=82",
+              "images/phiyếntim.jpg",
             ],
             [
-              "Cẩm Chướng Cỏ May",
-              "Bó hoa thoáng đãng, tiện nghi và riêng tư.",
+              "Hoa Violet Hồng Phấn Gói Giấy Thủ Công",
+              "Mộc mạc, ngọt ngào, đầy cảm xúc",
               "270.000đ / bó",
-              "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=700&q=82",
+              "images/phiyếnhồng.jpg",
             ],
             [
-              "Cẩm Chướng Gió",
-              "Thiết kế tối giản, phù hợp làm quà tặng.",
+              "Hoa Trắng Xanh Giấy Đen",
+              "Tối giản, sang trọng, tương phản đẹp mắt.",
               "310.000đ / bó",
-              "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=82",
+              "images/hồngtrang.jpg",
             ],
             [
-              "Cẩm Chướng Đồi Thông",
-              "Một lựa chọn dễ chịu cho mọi dịp.",
+              "Hoa Chim Thiên Đường Và Lan Hồ Điệp Trắng",
+              "Sang trọng, phù hợp tặng khai trương, chúc mừng.",
               "330.000đ / bó",
-              "https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=700&q=82",
+              "images/hoalan.jpg",
             ],
           ],
         },
         {
-          name: "Hoa hướng dương",
+          name: "Hoa Ly, Cúc",
           desc: "Biểu tượng của sự lạc quan, niềm tin và hy vọng.",
           tag: "Còn hoa",
           rooms: [
             [
-              "Hướng Dương Rực Rỡ",
-              "Bó hoa rộng với cách bài trí ấm cúng.",
+              "Hoa Ly Hồng Phấn Pha Lê",
+              "Giấy gói hồng phấn, nơ ruy băng hồng dịu dàng, nhẹ nhàng và ngọt ngào.",
               "450.000đ / bó",
-              "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=700&q=82",
+              "images/camly.jpg",
             ],
             [
-              "Hướng Dương An Nhiên",
-              "Bó hoa thoáng đãng, phù hợp nhóm nhỏ.",
+              "Hoa Cúc Trắng Tweedia Xanh",
+              "Phong cách đồng quê, trong trẻo.",
               "420.000đ / bó",
-              "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=82",
+              "images/cuctrang.jpg",
             ],
             [
-              "Hướng Dương Vườn Nhỏ",
-              "Thiết kế thân thiện, tạo cảm giác gần gũi.",
+              "Hoa Ly Hồng Xanh Kẹo Ngọt",
+              "Rất hợp làm quà tặng bạn gái, bạn thân.",
               "480.000đ / bó",
-              "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=700&q=82",
+              "images/hoa.jpg",
             ],
             [
-              "Hướng Dương Đà Lạt",
-              "Không gian sinh hoạt tiện lợi cho kỳ nghỉ gia đình.",
+              "Hoa Ly Xanh Và Lan Vàng Tối Màu",
+              "Phong cách nghệ thuật, tương phản mạnh, độc lạ.",
               "500.000đ / bó",
-              "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=82",
+              "images/hoalan(1).jpg",
             ],
             [
-              "Hướng Dương Ấm Áp",
-              "Nhiều không gian nghỉ ngơi cho các thành viên.",
+              "Hoa Ly Trắng Mix Xanh Lá Thanh Khiết",
+              "Tinh khôi, dịu mắt, phù hợp tặng cô giáo, mẹ hoặc trang trí không gian.",
               "550.000đ / bó",
-              "https://images.unsplash.com/photo-1495231916356-a86217efff12?auto=format&fit=crop&w=700&q=82",
+              "images/liyxanh.jpg",
             ],
             [
-              "Hướng Dương Mộc Miên",
-              "Tông gỗ nhẹ nhàng cùng nội thất tiện nghi.",
+              "Hoa Ly Hồng Và Lan Hồ Điệp Đính Đá",
+              "Sang trọng, bồng bềnh, thích hợp tặng dịp đặc biệt.",
               "490.000đ / bó",
-              "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=700&q=82",
+              "images/lymix.jpg",
             ],
             [
-              "Hướng Dương Ban Công",
-              "Bó hoa rộng rãi dành cho nhóm bạn thân.",
+              "Hoa Ly Tím Hồng Phong Cách Nghệ Thuật",
+              "Phong cách nghệ thuật, độc đáo, thu hút ánh nhìn.",
               "510.000đ / bó",
-              "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=700&q=82",
+              "images/senmix.jpg",
             ],
             [
-              "Hướng Dương Bình Minh",
-              "Lựa chọn thoải mái cho chuyến đi nhiều kỷ niệm.",
+              "Hoa Chuông Trắng Và Cúc Hoạ Mi",
+              "Thanh khiết, tinh tế.",
               "580.000đ / bó",
-              "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=82",
+              "images/hoaloaken.jpg",
             ],
           ],
         },
         {
-          name: "Hoa lan",
+          name: "Hoa Tulip, Mao Lương, Sen",
           desc: "Biểu tượng của sự sang trọng, quý phái và bền lâu.",
           tag: "Còn hoa",
           rooms: [
             [
-              "Lan Hồ Điệp Trắng",
-              "Chậu lan thanh lịch, phù hợp cho dịp trang trọng.",
-              "700.000đ / chậu",
-              "https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=700&q=82",
+              "Hoa Tulip Xanh Dương Và Hoa Ren Trắng",
+              "Độc đáo, nhẹ nhàng, tạo ấn tượng khác biệt.",
+              "700.000đ / bó",
+              "images/lyxanh.jpeg",
             ],
             [
-              "Lan Hồ Điệp Hồng",
-              "Sắc hồng ngọt ngào, món quà sang trọng.",
-              "750.000đ / chậu",
-              "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=82",
+              "Hoa Tulip Trắng Và Delphinium Xanh Nhạt",
+              "Trong trẻo, thanh lịch, mang cảm giác mùa xuân.",
+              "750.000đ / bó",
+              "images/tulip.jpg",
             ],
             [
-              "Lan Mây Trắng",
-              "Đón nắng sớm và tận hưởng nhịp sống chậm.",
-              "780.000đ / chậu",
-              "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=700&q=82",
+              "Hoa Mao Lương Vàng Cam Và Lan Hồ Điệp Vàng",
+              "Tươi sáng, rực rỡ, mang năng lượng tích cực.",
+              "780.000đ / bó",
+              "images/vangmix.jpg",
             ],
             [
-              "Lan Hoàng Hôn",
-              "Một góc nhỏ ngắm thành phố lúc chiều buông.",
-              "800.000đ / chậu",
-              "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=700&q=82",
+              "Hoa Sen Hồng Gói Giấy Kraft",
+              "Phong cách Á Đông tinh tế, thanh tao.",
+              "800.000đ / bó",
+              "images/hoasen.jpg",
             ],
             [
-              "Lan Gió",
-              "Thiết kế thoáng đãng, gần gũi với thiên nhiên.",
-              "760.000đ / chậu",
-              "https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=700&q=82",
+              "Hoa Mix Pastel Hồng Phấn Gói Ren",
+              "Rực rỡ, vui tươi, ngọt ngào như một khu vườn nhỏ.",
+              "760.000đ / bó",
+              "images/lilyymix.jpg",
             ],
             [
-              "Lan Hoa",
-              "Không gian nhẹ nhàng cho kỳ nghỉ thư thái.",
-              "820.000đ / chậu",
-              "https://images.unsplash.com/photo-1495231916356-a86217efff12?auto=format&fit=crop&w=700&q=82",
+              "Hoa Chuông Trắng Tweedia Xanh",
+              "Dịu dàng, trong trẻo.",
+              "820.000đ / bó",
+              "images/hoalamtinhxanh.jpg",
             ],
             [
-              "Lan Bình Yên",
-              "Tận hưởng khoảng riêng giữa thành phố ngàn hoa.",
-              "790.000đ / chậu",
-              "https://images.unsplash.com/photo-1455659817273-f96807779a8a?auto=format&fit=crop&w=700&q=82",
+              "Hoa Wax Xanh Dương Và Lan Hồ Điệp",
+              "Phong cách cá tính, sang trọng, độc đáo.",
+              "790.000đ / bó",
+              "images/hoababy.jpg",
             ],
             [
-              "Lan Đồi Xa",
-              "Góc nghỉ dưỡng thoáng sáng cho hai người.",
-              "850.000đ / chậu",
-              "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=700&q=82",
+              "Hoa Vàng Pastel Và Cúc Hoạ Mi",
+              "Tươi sáng, rạng rỡ, mang năng lượng tích cực.",
+              "850.000đ / bó",
+              "images/hoamixvang.jpg",
             ],
           ],
         },
@@ -3301,6 +3312,98 @@
         }),
       );
       startAuto();
+
+      /* ===== VUỐT BANNER BẰNG TAY TRÊN MÀN HÌNH CẢM ỨNG ===== */
+      (function enableHeroSwipe() {
+        const hero = document.getElementById("hero");
+        if (!hero) return;
+        let startX = 0,
+          startY = 0,
+          startT = 0,
+          dx = 0,
+          width = 1,
+          dragging = false,
+          locked = null; // "x" = vuốt ngang, "y" = cuộn dọc
+        let neighbor = null;
+
+        function resetInline(el) {
+          if (!el) return;
+          el.style.transform = "";
+          el.style.opacity = "";
+          el.style.zIndex = "";
+        }
+        function getNeighbor(dir) {
+          // dir < 0: vuốt sang trái -> banner kế tiếp; dir > 0: banner trước
+          const idx =
+            (current + (dir < 0 ? 1 : -1) + layers.length) % layers.length;
+          return layers[idx];
+        }
+
+        hero.addEventListener(
+          "touchstart",
+          (e) => {
+            if (e.touches.length !== 1) return;
+            const t = e.touches[0];
+            startX = t.clientX;
+            startY = t.clientY;
+            startT = Date.now();
+            dx = 0;
+            width = hero.offsetWidth || 1;
+            dragging = true;
+            locked = null;
+            clearInterval(timer); // tạm dừng tự chạy khi đang chạm
+          },
+          { passive: true },
+        );
+
+        hero.addEventListener(
+          "touchmove",
+          (e) => {
+            if (!dragging) return;
+            const t = e.touches[0];
+            const mx = t.clientX - startX;
+            const my = t.clientY - startY;
+            if (!locked) {
+              if (Math.abs(mx) < 8 && Math.abs(my) < 8) return;
+              locked = Math.abs(mx) > Math.abs(my) ? "x" : "y";
+              if (locked === "x") hero.classList.add("dragging");
+            }
+            if (locked !== "x") return;
+            dx = mx;
+            const nb = getNeighbor(dx);
+            if (neighbor && neighbor !== nb) resetInline(neighbor);
+            neighbor = nb;
+            layers[current].style.transform = "translateX(" + dx + "px)";
+            layers[current].style.opacity = "1";
+            nb.style.opacity = "1";
+            nb.style.zIndex = "2";
+            nb.style.transform =
+              "translateX(" + (dx + (dx < 0 ? width : -width)) + "px)";
+          },
+          { passive: true },
+        );
+
+        function endDrag() {
+          if (!dragging) return;
+          dragging = false;
+          if (locked === "x") {
+            const velocity = Math.abs(dx) / Math.max(Date.now() - startT, 1);
+            const passed = Math.abs(dx) > width * 0.18 || velocity > 0.5;
+            hero.classList.remove("dragging");
+            resetInline(layers[current]);
+            resetInline(neighbor);
+            neighbor = null;
+            if (passed && Math.abs(dx) > 20) {
+              dx < 0 ? nextSlide() : prevSlide();
+            }
+          }
+          locked = null;
+          dx = 0;
+          startAuto();
+        }
+        hero.addEventListener("touchend", endDrag);
+        hero.addEventListener("touchcancel", endDrag);
+      })();
 
       (function createPetals() {
         const layer = document.getElementById("petalLayer");
